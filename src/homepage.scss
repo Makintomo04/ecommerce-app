@@ -1,0 +1,56 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  //   background: chocolate;
+  align-items: center;
+  padding: 20px 80px;
+}
+.directory-menu {
+  width: 100%;
+  display: grid;
+
+  grid-template-areas:
+    "men women shoes activewear"
+    "men  women accesories brands";
+
+  grid-template-rows: 320px 320px;
+  grid-template-columns: 300px 300px 360px 360px;
+  grid-gap: 15px;
+}
+.menu-item {
+  background: rgb(255, 96, 122);
+  min-width: 30%;
+  //   height: 240px;
+  //   flex: 1 1 auto;
+  border-radius: 3.5px;
+  display: flex;
+  padding: 30px;
+  //   justify-content: center;
+  align-items: flex-end;
+
+  &:first-child {
+    grid-area: men;
+  }
+  &:nth-child(2) {
+    grid-area: women;
+  }
+  &:nth-child(3) {
+    grid-area: shoes;
+  }
+  &:nth-child(4) {
+    grid-area: activewear;
+  }
+  &:nth-child(5) {
+    grid-area: accesories;
+  }
+  &:nth-child(6) {
+    grid-area: brands;
+  }
+  .content {
+    // displ
+  }
+}
