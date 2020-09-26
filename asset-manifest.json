@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Makintomo04/ecommerce-app/static/css/main.3b5e5def.chunk.css",
+    "main.js": "/Makintomo04/ecommerce-app/static/js/main.90a886e8.chunk.js",
+    "main.js.map": "/Makintomo04/ecommerce-app/static/js/main.90a886e8.chunk.js.map",
+    "runtime-main.js": "/Makintomo04/ecommerce-app/static/js/runtime-main.f2a9ca87.js",
+    "runtime-main.js.map": "/Makintomo04/ecommerce-app/static/js/runtime-main.f2a9ca87.js.map",
+    "static/js/2.6b034eae.chunk.js": "/Makintomo04/ecommerce-app/static/js/2.6b034eae.chunk.js",
+    "static/js/2.6b034eae.chunk.js.map": "/Makintomo04/ecommerce-app/static/js/2.6b034eae.chunk.js.map",
+    "index.html": "/Makintomo04/ecommerce-app/index.html",
+    "precache-manifest.0448817b4a7a244770ecd957ee329ea6.js": "/Makintomo04/ecommerce-app/precache-manifest.0448817b4a7a244770ecd957ee329ea6.js",
+    "service-worker.js": "/Makintomo04/ecommerce-app/service-worker.js",
+    "static/css/main.3b5e5def.chunk.css.map": "/Makintomo04/ecommerce-app/static/css/main.3b5e5def.chunk.css.map",
+    "static/js/2.6b034eae.chunk.js.LICENSE.txt": "/Makintomo04/ecommerce-app/static/js/2.6b034eae.chunk.js.LICENSE.txt",
+    "static/media/homepage.scss": "/Makintomo04/ecommerce-app/static/media/women2.69141f75.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2a9ca87.js",
+    "static/js/2.6b034eae.chunk.js",
+    "static/css/main.3b5e5def.chunk.css",
+    "static/js/main.90a886e8.chunk.js"
+  ]
+}
