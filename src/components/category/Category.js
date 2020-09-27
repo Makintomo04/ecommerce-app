@@ -5,9 +5,11 @@ const Category = ({ title, img_URL }) => (
   <div className="category">
     <div
       className="category__bg"
-      style={{
-        backgroundImage: `url(${img_URL})`,
-      }}
+      style={
+        {
+          // backgroundImage: `url(./images/men3)`,
+        }
+      }
     ></div>
     <div className="category__content">
       <h1 className="category__title">{title}</h1>
