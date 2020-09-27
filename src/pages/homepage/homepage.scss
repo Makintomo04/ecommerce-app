@@ -1,0 +1,30 @@
+.home {
+  display: flex;
+  //   flex-direction: column;
+  justify-content: center;
+  max-width: 1440px;
+  //   width: 100vw;
+  height: 100vh;
+  //   min-width: 100%;
+  margin: 0 auto;
+  //   background: chocolate;
+  align-items: center;
+  //   padding: 20px 80px;
+  position: relative;
+}
+.render {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  img {
+    // position: absolute;
+    // top: -50px;
+    // left: 200px;
+    height: 400px;
+  }
+}
