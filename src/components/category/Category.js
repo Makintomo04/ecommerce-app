@@ -1,8 +1,14 @@
 import React from "react";
 import "./Category.scss";
+import { withRouter } from "react-router-dom";
 
-const Category = ({ title, img_URL }) => (
-  <div className="category">
+const Category = ({ title, img_URL, history, link_URL, match }) => (
+  <div
+    className="category"
+    onClick={() => history.push(`${match.url}${link_URL}`)}
+    // onClick={() => console.log(match.url)}
+  >
+    {}
     <div
       className="category__bg"
       style={
@@ -16,8 +22,8 @@ const Category = ({ title, img_URL }) => (
       <span className="category__subtitle">Shop Now</span>
     </div>
 
-    {console.log(img_URL)}
+    {/* {console.log(img_URL)} */}
   </div>
 );
 
-export default Category;
+export default withRouter(Category);
