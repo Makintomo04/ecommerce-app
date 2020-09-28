@@ -1,3 +1,7 @@
+import slimShirt from "../../components/collection-row/collection_item/images/fs_slim_tee.jpg";
+import hoodie from "../../components/collection-row/collection_item/images/hoodie.jpg";
+import hummel from "../../components/collection-row/collection_item/images/hummel.jpg";
+import fpBeanie from "../../components/collection-row/collection_item/images/fpHat.jpg";
 const MensData = [
   {
     id: 1,
@@ -6,31 +10,32 @@ const MensData = [
     items: [
       {
         id: 1,
-        brand: "Velvo",
-        name: "Camo Down Vest",
-        imageUrl: "https://i.ibb.co/xJS0T3Y/camo-vest.png",
-        price: 325,
+        brand: "Farah Steen",
+        name: "Slim fit in green",
+        imageUrl: `${slimShirt}`,
+        price: 65,
       },
       {
         id: 2,
-        brand: "PnP",
-        name: "Floral T-shirt",
-        imageUrl: "https://i.ibb.co/qMQ75QZ/floral-shirt.png",
-        price: 20,
+        brand: "Hummel",
+        name: "Small logo sweatshirt in black",
+        imageUrl: `${hummel}`,
+        price: 55,
       },
       {
         id: 3,
-        brand: "Jaji",
-        name: "Black & White Longsleeve",
-        imageUrl: "https://i.ibb.co/55z32tw/long-sleeve.png",
-        price: 25,
+        brand: "Tommy Hilfiger",
+        name: "Lounge loodie with chest logo",
+        imageUrl: `${hoodie}`,
+        price: 72,
       },
       {
         id: 4,
-        brand: "Beths",
-        name: "Pink T-shirt",
-        imageUrl: "https://i.ibb.co/RvwnBL8/pink-shirt.png",
-        price: 25,
+        brand: "Fred Perry",
+        name: "Roll up beanie hat in black",
+        imageUrl: `${fpBeanie}`,
+
+        price: 40,
       },
       {
         id: 5,
