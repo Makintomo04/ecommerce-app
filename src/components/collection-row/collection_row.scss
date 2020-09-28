@@ -1,0 +1,11 @@
+.collection_row {
+  width: 100%;
+  &__title {
+    margin: 32px 0;
+    text-align: center;
+  }
+}
+.preview_items {
+  display: flex;
+  justify-content: space-between;
+}
