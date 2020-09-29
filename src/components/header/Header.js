@@ -11,7 +11,7 @@ const Header = () => {
         </div>
         <div className="logo">
           <Link to="/">
-            <h1>CELESTIAL&CO</h1>
+            <h1>MARQ-E</h1>
           </Link>
         </div>
         <ul>
@@ -42,6 +42,19 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <div className="delivery_banner">
+        <div className="delivery_banner__inner">
+          <span className="delivery_banner__inner__text">
+            Free Standard Delivery | Find out more
+          </span>
+          <span className="delivery_banner__inner__text">
+            View our store reopening update
+          </span>
+          <span className="delivery_banner__inner__text">
+            UNiDAYS - 20% off for students
+          </span>
+        </div>
+      </div>
     </div>
   );
 };

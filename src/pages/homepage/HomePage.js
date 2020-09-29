@@ -10,13 +10,7 @@ const HomePage = () => {
         <img src={render} />
       </div> */}
 
-      <img
-        height="600px"
-        width="1200px"
-        className="banner"
-        src={banner}
-        alt=""
-      />
+      <img className="banner" src={banner} alt="" />
 
       <Directory />
     </div>

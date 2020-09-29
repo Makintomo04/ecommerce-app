@@ -21,6 +21,7 @@ code {
 
 body {
   background: white;
+  overflow-x: hidden;
   /* background: #dcd8cd; */
   /* background: black; */
 }
