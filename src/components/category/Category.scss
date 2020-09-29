@@ -27,7 +27,7 @@
   width: 100%;
   //   height: 240px;
   //   flex: 1 1 auto;
-  border-radius: 3.5px;
+  // border-radius: 3.5px;
   display: flex;
 
   //   justify-content: center;
@@ -84,17 +84,5 @@
     padding: 30px;
     color: white;
     z-index: 1;
-  }
-}
-
-@media (max-width: 1440px) {
-  .directory-menu {
-    grid-template-areas:
-      "men women shoes"
-      "men  women accessories"
-      "activewear activewear brands";
-    grid-template-rows: 320px 320px 320px;
-    grid-template-columns: 400px 400px 480px auto;
-    grid-gap: 15px;
   }
 }

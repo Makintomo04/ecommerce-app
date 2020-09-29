@@ -1,16 +1,22 @@
 .home {
   display: flex;
-  //   flex-direction: column;
+  flex-direction: column;
   justify-content: center;
-  max-width: 1440px;
+  max-width: 1200px;
+  padding-bottom: 80px;
   //   width: 100vw;
-  height: 100vh;
+  // height: 90vh;
+  height: auto;
   //   min-width: 100%;
   margin: 0 auto;
   //   background: chocolate;
   align-items: center;
   //   padding: 20px 80px;
   position: relative;
+  .banner {
+    margin: 80px;
+    object-fit: cover;
+  }
 }
 .render {
   display: flex;

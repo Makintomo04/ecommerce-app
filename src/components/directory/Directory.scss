@@ -1,5 +1,5 @@
 .directory-menu {
-  //   width: 100%;
+  width: 100%;
   display: grid;
 
   grid-template-areas:
@@ -7,6 +7,18 @@
     "men  women activewear brands";
 
   grid-template-rows: 300px 300px;
-  grid-template-columns: 300px 300px 320px 320px;
-  grid-gap: 15px;
+  grid-template-columns: 300px 300px minmax(250px, auto) minmax(250px, auto);
+  grid-gap: 17px;
+}
+
+@media (max-width: 1440px) {
+  .directory-menu {
+    grid-template-areas:
+      "men women shoes"
+      "men  women accessories"
+      "activewear activewear brands";
+    grid-template-rows: 320px 320px 320px;
+    grid-template-columns: 400px 400px 480px auto;
+    grid-gap: 15px;
+  }
 }
