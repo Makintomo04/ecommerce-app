@@ -10,9 +10,9 @@ const Header = () => {
           <span>GB/GBP £</span>
         </div>
         <div className="logo">
-          <Link to="/">
-            <h1>MARQ-E</h1>
-          </Link>
+          <h1>
+            <Link to="/">MARQ-E</Link>
+          </h1>
         </div>
         <ul>
           <li>

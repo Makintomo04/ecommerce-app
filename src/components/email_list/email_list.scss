@@ -1,0 +1,23 @@
+.email-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__text {
+    margin-right: 50px;
+  }
+  &__input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 0;
+    border: 1px solid black;
+  }
+  &__btn {
+    cursor: pointer;
+    padding: 11px;
+    border-radius: 0;
+    outline: none;
+    background: black;
+    color: white;
+    border: none;
+  }
+}

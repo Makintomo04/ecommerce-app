@@ -9,6 +9,7 @@
   grid-template-rows: 280px 280px;
   grid-template-columns: 300px 300px minmax(250px, auto) minmax(250px, auto);
   grid-gap: 17px;
+  margin-bottom: 80px;
 }
 
 @media (max-width: 1440px) {
