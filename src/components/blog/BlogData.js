@@ -6,7 +6,7 @@ const BlogData = [
   {
     id: 1,
     imageURL: `${apple} `,
-    title: "The Ultimate Cheat Sheet on Fashion",
+    title: "The new formal",
   },
   {
     id: 2,
@@ -16,12 +16,12 @@ const BlogData = [
   {
     id: 3,
     imageURL: `${window}`,
-    title: "10 Facts About Fashion That Will Instantly Put You in a Good Mood",
+    title: "The Helmut Depay Archive",
   },
   {
     id: 4,
     imageURL: `${veg}`,
-    title: "Simone x MARQ-E",
+    title: "Designer Spotlight: Simone Wells",
   },
 ];
 
