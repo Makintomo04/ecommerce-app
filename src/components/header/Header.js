@@ -29,6 +29,12 @@ const Header = () => {
       <nav>
         <ul className="nav-links">
           <li>
+            <Link to="/mens">Mens</Link>
+          </li>
+          <li>
+            <Link to="/womens">Womens</Link>
+          </li>
+          <li>
             <Link to="/shoes">Shoes</Link>
           </li>
           <li>

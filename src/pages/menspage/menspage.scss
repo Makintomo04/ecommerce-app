@@ -1,0 +1,25 @@
+.mens-page {
+  display: flex;
+  margin-top: 80px;
+  justify-content: center;
+}
+.mens-page__title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.mens-page__para {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 80px;
+  color: #444;
+}
+.mens-page__newIn-link {
+  margin: 80px 0;
+  display: flex;
+  justify-content: center;
+
+  & a {
+    color: black;
+  }
+}
