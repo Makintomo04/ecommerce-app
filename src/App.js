@@ -6,6 +6,7 @@ import ShoesPage from "./pages/shoespage/Shoes";
 import Directory from "./components/directory/Directory";
 import { Route, Switch } from "react-router-dom";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/shoes" component={ShoesPage} />
       </Switch>
       {/* <HomePage /> */}
+      <Footer />
     </div>
   );
 }
