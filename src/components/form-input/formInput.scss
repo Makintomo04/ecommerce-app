@@ -1,0 +1,13 @@
+.group {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    margin-bottom: 10px;
+  }
+  & input {
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 1px solid #444;
+  }
+}

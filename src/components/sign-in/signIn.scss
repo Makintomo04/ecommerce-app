@@ -1,0 +1,26 @@
+.sign-in {
+  margin-top: 80px;
+  //   max-width: 1200px;
+  //   margin: auto;
+  & h2 {
+    margin-bottom: 20px;
+  }
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  & form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type="submit"] {
+    padding: 15px;
+    background: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    border: 1px solid #444;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+}

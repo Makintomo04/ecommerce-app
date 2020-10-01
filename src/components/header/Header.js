@@ -16,7 +16,9 @@ const Header = () => {
         </div>
         <ul>
           <li>
-            <i class="far fa-user-circle"></i>
+            <Link to="/login">
+              <i class="far fa-user-circle"></i>
+            </Link>
           </li>
           <li>
             <i class="fas fa-heart"></i>
