@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { signInWithTwitter } from "../../firebase/firebase.utils";
 import "./signIn.scss";
 import FormInput from "../form-input/FormInput";
 import Button from "../button/Button";
@@ -12,7 +13,7 @@ const SignIn = () => {
 
   const handleChange = (e) => {
     const { value, name } = e.target;
-    if (name == "email") {
+    if (name === "email") {
       setEmail(value);
     } else {
       setPassword(value);
@@ -26,24 +27,25 @@ const SignIn = () => {
         <FormInput
           label="Email address"
           placeholder="example@domain.com"
-          required="true"
+          required={true}
           type="email"
           name="email"
           value={email}
           handleChange={handleChange}
-          required
         />
         {/* <label>Password</label> */}
         <FormInput
           label="Password"
-          required="true"
+          required={true}
           type="password"
           name="password"
           value={password}
           handleChange={handleChange}
-          required
         />
         <Button type="submit">Sign In</Button>
+        <Button onClick={signInWithTwitter} theme="twitter">
+          Sign In With Twitter
+        </Button>
       </form>
     </div>
   );
