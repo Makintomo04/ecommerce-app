@@ -1,0 +1,15 @@
+.custom-button {
+  padding: 15px;
+  background: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    background-color: rgb(165, 165, 165);
+    color: black;
+  }
+}

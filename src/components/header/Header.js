@@ -7,7 +7,15 @@ const Header = () => {
       {/*column flex*/}
       <header>
         <div className="lang">
-          <span>GB/GBP £</span>
+          <div
+            style={{ display: "flex", alignItems: "center", height: "100%" }}
+          >
+            <span>GB/GBP £</span>
+            <i
+              style={{ height: "25px", marginLeft: "10px" }}
+              className="fas fa-sort-down"
+            ></i>
+          </div>
         </div>
         <div className="logo">
           <h1>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./signIn.scss";
 import FormInput from "../form-input/FormInput";
+import Button from "../button/Button";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,7 +43,7 @@ const SignIn = () => {
           handleChange={handleChange}
           required
         />
-        <input type="submit" value="Sign In" />
+        <Button type="submit">Sign In</Button>
       </form>
     </div>
   );
