@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 import LoginPage from "./pages/sign-in-sign-up/SignInSignUp";
 import HomePage from "./pages/homepage/HomePage";
@@ -8,8 +8,20 @@ import Directory from "./components/directory/Directory";
 import { Route, Switch } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import { auth } from "./firebase/firebase.utils";
 
 function App() {
+  const [userAuth, setUserAuth] = useState(null);
+  useEffect(() => {
+    let unsubFromAuth = null;
+    unsubFromAuth = auth.onAuthStateChanged((user) => {
+      setUserAuth(user);
+    });
+  });
+  useEffect(() => {
+    unsubFromAuth();
+  });
+
   return (
     <div className="App">
       <div className="App__Content">
