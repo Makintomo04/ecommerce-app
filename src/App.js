@@ -12,20 +12,20 @@ import { auth } from "./firebase/firebase.utils";
 
 function App() {
   const [userAuth, setUserAuth] = useState(null);
+  let unsubscribeAuth = null;
   useEffect(() => {
-    let unsubFromAuth = null;
-    unsubFromAuth = auth.onAuthStateChanged((user) => {
+    unsubscribeAuth = auth.onAuthStateChanged((user) => {
       setUserAuth(user);
     });
   });
   useEffect(() => {
-    unsubFromAuth();
+    return () => unsubscribeAuth();
   });
 
   return (
     <div className="App">
       <div className="App__Content">
-        <Header />
+        <Header currentUser={userAuth} />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/login" component={LoginPage} />

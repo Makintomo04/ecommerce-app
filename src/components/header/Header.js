@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./header.scss";
-const Header = () => {
+import Button from "../button/Button";
+import { auth } from "../../firebase/firebase.utils";
+const Header = ({ currentUser }) => {
   return (
-    <div className="header">
+    <div className="header-bg">
       {/*column flex*/}
       <header>
         <div className="lang">
@@ -27,6 +29,15 @@ const Header = () => {
             <Link to="/login">
               <i class="far fa-user-circle"></i>
             </Link>
+            {currentUser && (
+              <div className="profile-popup">
+                <div className="profile-popup__inner">
+                  <span>{`Welcome Back! ${currentUser?.displayName}`}</span>
+                  <Button onClick={() => auth.signOut()}>Log Out</Button>
+                </div>
+              </div>
+            )}
+            {console.log("yooo", currentUser)}
           </li>
           <li>
             <i class="fas fa-heart"></i>

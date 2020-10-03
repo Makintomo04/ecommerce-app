@@ -1,4 +1,4 @@
-.header {
+.header-bg {
   a {
     text-decoration: none;
     color: black;
@@ -58,6 +58,7 @@
   }
 }
 header {
+  position: relative;
   min-height: 7.5vh;
   max-width: 1200px;
   width: 100%;
@@ -77,6 +78,7 @@ header {
   }
   ul {
     // background: hotpink;
+    z-index: 10;
     font-size: 20px;
     flex: 1;
     display: flex;
@@ -85,6 +87,48 @@ header {
       cursor: pointer;
       list-style: none;
       padding-left: 10px;
+      &:first-child {
+        &:hover .profile-popup {
+          display: flex;
+        }
+      }
+    }
+  }
+  .profile-popup {
+    &:hover {
+      display: flex;
+    }
+    position: absolute;
+    width: 200px;
+    height: auto;
+    top: 80%;
+    right: 0;
+    // z-index: 100;
+    flex-direction: column;
+    background: white;
+    border: 2px solid black;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    &__inner {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-between;
+      padding: 25px 25px;
+    }
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      top: -20px;
+      left: 50%;
+      transform: translate(-50%, 50%) rotate(45deg);
+      background: black;
+      position: absolute;
+      z-index: -10;
     }
   }
 }
