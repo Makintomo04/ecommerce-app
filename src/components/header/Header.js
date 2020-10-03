@@ -26,9 +26,16 @@ const Header = ({ currentUser }) => {
         </div>
         <ul>
           <li>
-            <Link to="/login">
-              <i class="far fa-user-circle"></i>
-            </Link>
+            {!currentUser ? (
+              <Link to="/login">
+                <i class="far fa-user-circle"></i>
+              </Link>
+            ) : (
+              <Link>
+                <i class="far fa-user-circle"></i>
+              </Link>
+            )}
+
             {currentUser && (
               <div className="profile-popup">
                 <div className="profile-popup__inner">
