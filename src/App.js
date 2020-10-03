@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./App.scss";
 import LoginPage from "./pages/sign-in-sign-up/SignInSignUp";
 import HomePage from "./pages/homepage/HomePage";
@@ -12,14 +12,15 @@ import { auth } from "./firebase/firebase.utils";
 
 function App() {
   const [userAuth, setUserAuth] = useState(null);
-  let unsubscribeAuth = null;
+  // let unsubscribeAuth = null;
+  const unsubscribeAuth = useRef(null);
   useEffect(() => {
-    unsubscribeAuth = auth.onAuthStateChanged((user) => {
+    unsubscribeAuth.current = auth.onAuthStateChanged((user) => {
       setUserAuth(user);
     });
   });
   useEffect(() => {
-    return () => unsubscribeAuth();
+    return () => unsubscribeAuth.current();
   });
 
   return (
