@@ -29,7 +29,7 @@ function App() {
       } else {
         setUserAuth(userAuth);
       }
-      // console.log(userAuth);
+      console.log(userAuth);
     });
     return () => unsubscribeAuth.current();
   }, []);
