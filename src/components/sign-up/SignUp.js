@@ -64,7 +64,6 @@ const SignUp = () => {
         {/* <label>Email</label> */}
         <FormInput
           label="First name"
-          placeholder="John"
           required={true}
           type="text"
           name="firstname"
@@ -73,7 +72,6 @@ const SignUp = () => {
         />
         <FormInput
           label="Last name"
-          placeholder="Doe"
           required={true}
           type="text"
           name="lastname"
