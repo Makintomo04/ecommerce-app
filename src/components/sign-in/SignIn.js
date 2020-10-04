@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { signInWithTwitter } from "../../firebase/firebase.utils";
+import { auth, signInWithTwitter } from "../../firebase/firebase.utils";
 import "./signIn.scss";
 import FormInput from "../form-input/FormInput";
 import Button from "../button/Button";
@@ -7,8 +7,15 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const { user } = await auth.signInWithEmailAndPassword(email, password);
+      setEmail("");
+      setPassword("");
+    } catch (error) {
+      console.log("error signing in, try again");
+    }
   };
 
   const handleChange = (e) => {
