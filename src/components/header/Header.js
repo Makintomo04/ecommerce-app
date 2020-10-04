@@ -44,7 +44,7 @@ const Header = ({ currentUser }) => {
                 </div>
               </div>
             )}
-            {console.log("yooo", currentUser)}
+            {/* {console.log("yooo", currentUser)} */}
           </li>
           <li>
             <i class="fas fa-heart"></i>

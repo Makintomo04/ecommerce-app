@@ -86,7 +86,10 @@ header {
     li {
       cursor: pointer;
       list-style: none;
-      padding-left: 10px;
+
+      &:not(:first-child) {
+        padding-left: 10px;
+      }
       &:first-child {
         &:hover .profile-popup {
           display: flex;
@@ -102,7 +105,7 @@ header {
     width: 200px;
     height: auto;
     top: 80%;
-    right: 0;
+    right: 10px;
     // z-index: 100;
     flex-direction: column;
     background: white;

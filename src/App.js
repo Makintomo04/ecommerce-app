@@ -8,21 +8,32 @@ import Directory from "./components/directory/Directory";
 import { Route, Switch } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import { auth } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 function App() {
   const [userAuth, setUserAuth] = useState(null);
   // let unsubscribeAuth = null;
   const unsubscribeAuth = useRef(null);
   useEffect(() => {
-    unsubscribeAuth.current = auth.onAuthStateChanged((user) => {
-      setUserAuth(user);
-    });
-  });
-  useEffect(() => {
-    return () => unsubscribeAuth.current();
-  });
+    unsubscribeAuth.current = auth.onAuthStateChanged(async (userAuth) => {
+      // setUserAuth(user);
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
 
+        userRef.onSnapshot((snapShot) => {
+          setUserAuth({
+            id: snapShot.id,
+            ...snapShot.data(),
+          });
+        });
+      } else {
+        setUserAuth(userAuth);
+      }
+      // console.log(userAuth);
+    });
+    return () => unsubscribeAuth.current();
+  }, []);
+  // console.log(userAuth);
   return (
     <div className="App">
       <div className="App__Content">
