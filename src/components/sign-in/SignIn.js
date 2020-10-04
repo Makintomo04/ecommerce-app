@@ -18,6 +18,16 @@ const SignIn = () => {
     }
   };
 
+  const handlePassReset = (e) => {
+    auth
+      .sendPasswordResetEmail(email)
+      .then(function () {
+        // Email sent.
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
   const handleChange = (e) => {
     const { value, name } = e.target;
     if (name === "email") {
@@ -49,6 +59,9 @@ const SignIn = () => {
           value={password}
           handleChange={handleChange}
         />
+        <span onClick={handlePassReset} class="pass-reset">
+          Forgot Password
+        </span>
         <Button type="submit">Sign In</Button>
         <Button onClick={signInWithTwitter} theme="twitter">
           Sign In With Twitter

@@ -11,5 +11,9 @@
   & form {
     display: flex;
     flex-direction: column;
+    .pass-reset {
+      color: #777;
+      cursor: pointer;
+    }
   }
 }

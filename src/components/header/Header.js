@@ -39,12 +39,17 @@ const Header = ({ currentUser }) => {
             {currentUser && (
               <div className="profile-popup">
                 <div className="profile-popup__inner">
-                  <span>{`Welcome Back! ${currentUser?.displayName}`}</span>
+                  {currentUser?.displayName ? (
+                    <span>{`Welcome Back! ${currentUser?.displayName}`}</span>
+                  ) : (
+                    <span>{`Welcome Back! ${currentUser?.firstname}`}</span>
+                  )}
+
                   <Button onClick={() => auth.signOut()}>Log Out</Button>
                 </div>
               </div>
             )}
-            {/* {console.log("yooo", currentUser)} */}
+            {console.log("yooo", currentUser)}
           </li>
           <li>
             <i class="fas fa-heart"></i>
