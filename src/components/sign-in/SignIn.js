@@ -3,9 +3,20 @@ import { auth, signInWithTwitter } from "../../firebase/firebase.utils";
 import "./signIn.scss";
 import FormInput from "../form-input/FormInput";
 import Button from "../button/Button";
-const SignIn = () => {
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import { withStyles } from "@material-ui/core/styles/withStyles";
+const styles = (theme) => ({
+  accordion: {
+    border: "none",
+    boxShadow: "none",
+  },
+});
+const SignIn = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [recoverEmail, setRecoverEmail] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +31,7 @@ const SignIn = () => {
 
   const handlePassReset = (e) => {
     auth
-      .sendPasswordResetEmail(email)
+      .sendPasswordResetEmail(recoverEmail)
       .then(function () {
         // Email sent.
       })
@@ -30,10 +41,16 @@ const SignIn = () => {
   };
   const handleChange = (e) => {
     const { value, name } = e.target;
-    if (name === "email") {
-      setEmail(value);
-    } else {
-      setPassword(value);
+    switch (name) {
+      case "email":
+        setEmail(value);
+        break;
+      case "password":
+        setPassword(value);
+        break;
+      case "recoverEmail":
+        setRecoverEmail(value);
+        break;
     }
   };
   return (
@@ -59,14 +76,33 @@ const SignIn = () => {
           value={password}
           handleChange={handleChange}
         />
-        <span onClick={handlePassReset} class="pass-reset">
-          Forgot Password
-        </span>
+
         <Button type="submit">Sign In</Button>
         <Button onClick={signInWithTwitter} theme="twitter">
           Sign In With Twitter
         </Button>
       </form>
+      <Accordion style={{ boxShadow: "none" }}>
+        <AccordionSummary style={{ padding: "0" }}>
+          <span class="pass-reset">Forgot Password?</span>
+        </AccordionSummary>
+        <AccordionDetails style={{ paddingLeft: "0" }}>
+          <div className="accord">
+            <FormInput
+              label="Email address"
+              placeholder="example@domain.com"
+              required={true}
+              type="recoverEmail"
+              name="recoverEmail"
+              value={recoverEmail}
+              handleChange={handleChange}
+            />
+            <Button type="button" onClick={handlePassReset}>
+              Send Password Reset Email
+            </Button>
+          </div>
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
 };
