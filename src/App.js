@@ -9,46 +9,54 @@ import { Route, Switch } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { connect } from "react-redux";
+import { setCurrentUser } from "./redux/user/user.actions";
 
-function App() {
-  const [userAuth, setUserAuth] = useState(null);
-  // let unsubscribeAuth = null;
-  const unsubscribeAuth = useRef(null);
-  useEffect(() => {
-    unsubscribeAuth.current = auth.onAuthStateChanged(async (userAuth) => {
-      // setUserAuth(user);
+class App extends React.Component {
+  unsubscribeFromAuth = null;
+
+  componentDidMount() {
+    const { setCurrentUser } = this.props;
+
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot((snapShot) => {
-          setUserAuth({
+          setCurrentUser({
             id: snapShot.id,
             ...snapShot.data(),
           });
         });
-      } else {
-        setUserAuth(userAuth);
       }
-      console.log(userAuth);
+
+      setCurrentUser(userAuth);
     });
-    return () => unsubscribeAuth.current();
-  }, []);
-  // console.log(userAuth);
-  return (
-    <div className="App">
-      <div className="App__Content">
-        <Header currentUser={userAuth} />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/mens" component={MensPage} />
-          <Route path="/shoes" component={ShoesPage} />
-        </Switch>
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+  render() {
+    return (
+      <div className="App">
+        <div className="App__Content">
+          <Header />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/mens" component={MensPage} />
+            <Route path="/shoes" component={ShoesPage} />
+          </Switch>
+        </div>
+        {/* <HomePage /> */}
+        <Footer />
       </div>
-      {/* <HomePage /> */}
-      <Footer />
-    </div>
-  );
+    );
+  }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+export default connect(null, mapDispatchToProps)(App);

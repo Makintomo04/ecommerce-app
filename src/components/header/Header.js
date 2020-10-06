@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import "./header.scss";
 import Button from "../button/Button";
 import { auth } from "../../firebase/firebase.utils";
+import { connect } from "react-redux";
 const Header = ({ currentUser }) => {
   return (
     <div className="header-bg">
+      {/* {console.log("yooo", currentUser)} */}
       {/*column flex*/}
       <header>
         <div className="lang">
@@ -49,7 +51,7 @@ const Header = ({ currentUser }) => {
                 </div>
               </div>
             )}
-            {console.log("yooo", currentUser)}
+            {/* {console.log("yooo", currentUser)} */}
           </li>
           <li>
             <i class="fas fa-heart"></i>
@@ -98,4 +100,7 @@ const Header = ({ currentUser }) => {
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+export default connect(mapStateToProps)(Header);
