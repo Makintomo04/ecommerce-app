@@ -10,7 +10,7 @@ const CartIcon = ({ setCartHidden }) => {
       onMouseLeave={() => setCartHidden(true)}
     >
       <div className="cart-icon__icon">
-        <i class="fas fa-shopping-basket"></i>
+        <i class="fas fa-shopping-bag"></i>
       </div>
       <div className="item-count">
         <span className="item-count__no">4</span>

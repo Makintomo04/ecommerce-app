@@ -33,11 +33,11 @@ const Header = ({ currentUser, hidden, setCartHidden }) => {
           <li>
             {!currentUser ? (
               <Link to="/login">
-                <i class="far fa-user-circle"></i>
+                <i class="fas fa-user-circle"></i>
               </Link>
             ) : (
               <Link>
-                <i class="far fa-user-circle"></i>
+                <i class="fas fa-user-circle"></i>
               </Link>
             )}
 
