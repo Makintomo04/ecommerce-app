@@ -1,14 +1,15 @@
 .cart-dropdown-wrapper {
   // background-color: goldenrod;
+  z-index: 1;
   // margin-top: 10px;
   width: 250px;
   height: auto;
-  padding-top: 60px;
+  padding-top: 20px;
   position: absolute;
   right: 0;
 
-  // top: 7.5vh;
-  top: 5px;
+  top: 5vh;
+  // top: 5px;
 }
 .cart-dropdown {
   background: rgb(255, 255, 255);
@@ -38,5 +39,16 @@
     display: flex;
     justify-content: space-between;
     margin-top: auto;
+  }
+  &::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: -20px;
+    right: 0;
+    transform: translate(-10%, 50%) rotate(45deg);
+    background: black;
+    position: absolute;
+    z-index: -10;
   }
 }
