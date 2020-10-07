@@ -22,3 +22,13 @@
     border: 1px solid #3bc8ff;
   }
 }
+.view-bag {
+  background-color: #eb2a2a;
+  color: white;
+  border: none;
+  &:hover {
+    background-color: #ff5252;
+    border: none;
+    // border: 1px solid #3bc8ff;
+  }
+}

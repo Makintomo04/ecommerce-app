@@ -4,7 +4,10 @@ import "./header.scss";
 import Button from "../button/Button";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
-const Header = ({ currentUser }) => {
+import CartIcon from "../cart-icon/CartIcon";
+import CartDropdown from "../cart-dropdown/CartDropdown";
+import { setCartHidden } from "../../redux/cart/cart.actions";
+const Header = ({ currentUser, hidden, setCartHidden }) => {
   return (
     <div className="header-bg">
       {/* {console.log("yooo", currentUser)} */}
@@ -57,10 +60,12 @@ const Header = ({ currentUser }) => {
             <i class="fas fa-heart"></i>
           </li>
           <li>
-            <i class="fas fa-shopping-basket"></i>
+            <CartIcon />
           </li>
         </ul>
+        {!hidden ? <CartDropdown /> : null}
       </header>
+
       <nav>
         <ul className="nav-links">
           <li>
@@ -100,7 +105,9 @@ const Header = ({ currentUser }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden,
 });
+
 export default connect(mapStateToProps)(Header);
