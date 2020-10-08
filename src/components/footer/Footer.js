@@ -35,9 +35,6 @@ const Footer = () => {
             <a>Manage Cookies</a>
           </li>
           <li>
-            <a>E-receipts</a>
-          </li>
-          <li>
             <a>Careers</a>
           </li>
         </ul>
