@@ -16,7 +16,7 @@ const CartDropdown = ({ setCartHidden, cartItems }) => {
           <span>Bag, {cartItems.length} Items</span>
         </div>
 
-        <div className="cart-dropdown ">
+        <div className="cart-dropdown__items ">
           {cartItems.map((cartItem) => (
             <CartItem key={cartItem.id} item={cartItem} />
           ))}
