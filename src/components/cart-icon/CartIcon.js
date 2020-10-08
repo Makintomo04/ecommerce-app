@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { setCartHidden } from "../../redux/cart/cart.actions";
 import "./cartIcon.scss";
-const CartIcon = ({ setCartHidden }) => {
+const CartIcon = ({ setCartHidden, cartItems }) => {
   return (
     <div
       className="cart-icon"
@@ -12,13 +12,19 @@ const CartIcon = ({ setCartHidden }) => {
       <div className="cart-icon__icon">
         <i class="fas fa-shopping-bag"></i>
       </div>
-      <div className="item-count">
-        <span className="item-count__no">4</span>
-      </div>
+      {console.log("fam", cartItems.length)}
+      {cartItems.length != 0 && (
+        <div className="item-count">
+          <span className="item-count__no">{cartItems.length}</span>
+        </div>
+      )}
     </div>
   );
 };
+const mapStateToProps = ({ cart: { cartItems } }) => ({
+  cartItems,
+});
 const mapDispatchToProps = (dispatch) => ({
   setCartHidden: (bool) => dispatch(setCartHidden(bool)),
 });
-export default connect(null, mapDispatchToProps)(CartIcon);
+export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);

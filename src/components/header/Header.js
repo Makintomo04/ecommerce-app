@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import CartIcon from "../cart-icon/CartIcon";
 import CartDropdown from "../cart-dropdown/CartDropdown";
 import { setCartHidden } from "../../redux/cart/cart.actions";
-const Header = ({ currentUser, hidden, setCartHidden }) => {
+const Header = ({ currentUser, hidden, setCartHidden, cartItems }) => {
   return (
     <div className="header-bg">
       {/* {console.log("yooo", currentUser)} */}
@@ -105,9 +105,13 @@ const Header = ({ currentUser, hidden, setCartHidden }) => {
   );
 };
 
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+const mapStateToProps = ({
+  user: { currentUser },
+  cart: { hidden, cartItems },
+}) => ({
   currentUser,
   hidden,
+  cartItems,
 });
 
 export default connect(mapStateToProps)(Header);

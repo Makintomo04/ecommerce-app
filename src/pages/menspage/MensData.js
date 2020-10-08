@@ -25,7 +25,7 @@ const MensData = [
       {
         id: 3,
         brand: "Tommy Hilfiger",
-        name: "Lounge loodie with chest logo",
+        name: "Lounge hoodie with chest logo",
         imageUrl: `${hoodie}`,
         price: 72,
       },

@@ -1,0 +1,24 @@
+.cart-item {
+  & img {
+    width: 100px;
+  }
+  //   background: pink;
+  //   border: 2px black solid;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  &__details {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    &__price {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    &__name {
+      margin-bottom: 10px;
+    }
+  }
+  border-bottom: 1px solid rgba(119, 119, 119, 0.5);
+}
