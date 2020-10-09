@@ -17,15 +17,31 @@ const CartDropdown = ({ setCartHidden, cartItems, itemCount }) => {
       onMouseLeave={() => setCartHidden(true)}
     >
       <div className="cart-dropdown">
-        <div className="cart-dropdown__count">
-          <span>Bag, {itemCount} Items</span>
-        </div>
-
-        <div className="cart-dropdown__items ">
-          {cartItems.map((cartItem) => (
-            <CartItem key={cartItem.id} item={cartItem} />
-          ))}
-        </div>
+        {cartItems.length > 0 && (
+          <div className="cart-dropdown__count">
+            <span>Bag, {itemCount} Items</span>
+          </div>
+        )}
+        {cartItems.length > 0 ? (
+          <div className="cart-dropdown__items ">
+            {cartItems.map((cartItem) => (
+              <CartItem key={cartItem.id} item={cartItem} />
+            ))}
+          </div>
+        ) : (
+          <div
+            style={{
+              height: "100%",
+              width: "100%",
+              display: "flex",
+              margin: "80px auto",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <span>Your bag is empty</span>
+          </div>
+        )}
         <div className="cart-dropdown__buttons" style={{ display: "flex" }}>
           <Button type="submit" theme="view-bag">
             View Bag
