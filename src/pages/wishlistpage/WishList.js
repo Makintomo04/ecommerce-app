@@ -14,7 +14,7 @@ const WishList = ({ favItems }) => {
       <div className="wishlist__items">
         {favItems.map((item) => (
           <div className="wishlist__item">
-            <Collection_Item item={item} />
+            <Collection_Item item={item} wishlist />
           </div>
         ))}
       </div>

@@ -14,6 +14,7 @@ const Collection_Item = ({
   addFavItem,
   removeFavItem,
   favItem,
+  wishlist,
 }) => {
   const [isFav, setIsFav] = useState(false);
   const { brand, name, price, imageUrl } = item;
@@ -27,10 +28,19 @@ const Collection_Item = ({
   };
   return (
     <div className="collection_item">
-      <span className="add-to-wishlist" onClick={() => addToWishlist()}>
-        {console.log(isFav)}
-        {!isFav ? <i class="far fa-heart"></i> : <i class="fas fa-heart"></i>}
-      </span>
+      {!wishlist ? (
+        <span className="add-to-wishlist" onClick={() => addToWishlist()}>
+          {console.log(isFav)}
+          {!isFav ? <i class="far fa-heart"></i> : <i class="fas fa-heart"></i>}
+        </span>
+      ) : (
+        <span
+          className="remove-from-wishlist"
+          onClick={() => removeFavItem(item)}
+        >
+          <i class="far fa-trash-alt"></i>
+        </span>
+      )}
       <div
         className="collection_item__image"
         style={{ backgroundImage: `url(${imageUrl})` }}
