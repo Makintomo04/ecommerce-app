@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./header.scss";
 import Button from "../button/Button";
 import { auth } from "../../firebase/firebase.utils";
@@ -11,7 +11,7 @@ import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import { selectCartItems } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 
-const Header = ({ currentUser, hidden, setCartHidden, cartItems }) => {
+const Header = ({ currentUser, hidden, setCartHidden, cartItems, history }) => {
   return (
     <div className="header-bg">
       {/* {console.log("yooo", currentUser)} */}
@@ -60,7 +60,7 @@ const Header = ({ currentUser, hidden, setCartHidden, cartItems }) => {
             )}
             {/* {console.log("yooo", currentUser)} */}
           </li>
-          <li>
+          <li onClick={() => history.push("./wishlist")}>
             <i class="fas fa-heart"></i>
           </li>
           <li>
@@ -115,4 +115,4 @@ const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
 });
 
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));

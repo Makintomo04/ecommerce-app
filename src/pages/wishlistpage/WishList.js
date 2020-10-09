@@ -1,7 +1,28 @@
 import React from "react";
 import "./wishlist.scss";
-const WishList = () => {
-  return <div>Wishlist</div>;
+import { connect } from "react-redux";
+import Collection_Item from "../../components/collection-row/collection_item/Collection_Item";
+// import {withRouter} from "react-router-dom"
+const WishList = ({ favItems }) => {
+  return (
+    <div className="wishlist">
+      <div className="wishlist__heading">
+        <h3>My Wishlist</h3>
+        <span>{favItems.length} items</span>
+      </div>
+      {console.log(favItems)}
+      <div className="wishlist__items">
+        {favItems.map((item) => (
+          <div className="wishlist__item">
+            <Collection_Item item={item} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
-
-export default WishList;
+const mapStateToProps = ({ wishlist: { favItems } }) => ({
+  favItems,
+});
+// ../../redux/wishlist/wishlist.reducer
+export default connect(mapStateToProps)(WishList);
