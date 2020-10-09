@@ -4,6 +4,7 @@ import LoginPage from "./pages/sign-in-sign-up/SignInSignUp";
 import HomePage from "./pages/homepage/HomePage";
 import MensPage from "./pages/menspage/MensPage";
 import ShoesPage from "./pages/shoespage/Shoes";
+import CheckoutPage from "./pages/checkoutpage/Checkout";
 import Directory from "./components/directory/Directory";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Header from "./components/header/Header";
@@ -55,6 +56,7 @@ class App extends React.Component {
             />
             <Route path="/mens" component={MensPage} />
             <Route path="/shoes" component={ShoesPage} />
+            <Route exact path="/checkout" component={CheckoutPage} />
           </Switch>
         </div>
         {/* <HomePage /> */}

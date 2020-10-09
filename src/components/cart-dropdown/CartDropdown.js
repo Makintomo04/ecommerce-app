@@ -2,6 +2,7 @@ import React from "react";
 import "./cartDropdown.scss";
 import Button from "../button/Button";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
 import { setCartHidden } from "../../redux/cart/cart.actions";
 import CartItem from "../cart-item/CartItem";
@@ -9,7 +10,11 @@ import {
   selectCartItemsCount,
   selectCartItems,
 } from "../../redux/cart/cart.selectors";
-const CartDropdown = ({ setCartHidden, cartItems, itemCount }) => {
+const CartDropdown = ({ setCartHidden, cartItems, itemCount, history }) => {
+  const goToCheckout = () => {
+    history.push("./checkout");
+    setCartHidden(true);
+  };
   return (
     <div
       className="cart-dropdown-wrapper"
@@ -46,7 +51,9 @@ const CartDropdown = ({ setCartHidden, cartItems, itemCount }) => {
           <Button type="submit" theme="view-bag">
             View Bag
           </Button>
-          <Button type="submit">Checkout</Button>
+          <Button type="submit" onClick={goToCheckout}>
+            Checkout
+          </Button>
         </div>
       </div>
     </div>
@@ -59,4 +66,6 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch) => ({
   setCartHidden: (bool) => dispatch(setCartHidden(bool)),
 });
-export default connect(mapStateToProps, mapDispatchToProps)(CartDropdown);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(CartDropdown)
+);
