@@ -4,6 +4,10 @@ import Button from "../button/Button";
 import { connect } from "react-redux";
 import { setCartHidden } from "../../redux/cart/cart.actions";
 import CartItem from "../cart-item/CartItem";
+import {
+  selectCartItemsCount,
+  selectCartItems,
+} from "../../redux/cart/cart.selectors";
 const CartDropdown = ({ setCartHidden, cartItems, itemCount }) => {
   return (
     <div
@@ -31,12 +35,9 @@ const CartDropdown = ({ setCartHidden, cartItems, itemCount }) => {
     </div>
   );
 };
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-  cartItems,
-  itemCount: cartItems.reduce(
-    (accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity,
-    0
-  ),
+const mapStateToProps = (state) => ({
+  cartItems: selectCartItems(state),
+  itemCount: selectCartItemsCount(state),
 });
 const mapDispatchToProps = (dispatch) => ({
   setCartHidden: (bool) => dispatch(setCartHidden(bool)),
