@@ -14,11 +14,11 @@
   }
   &__items {
     display: grid;
-    grid-template-columns: 280px 280px 280px 280px;
+    grid-template-columns: 290px 290px 290px 290px;
     justify-content: space-between;
-    grid-gap: 20px;
+    grid-gap: 15px;
     & .collection_item {
-      width: 280px;
+      width: 290px;
     }
   }
 }
