@@ -1,6 +1,6 @@
 .collection_item {
   //   border: 1px solid rgba(88, 88, 88, 0.251);
-  width: 400px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   height: 600px;
@@ -9,7 +9,7 @@
   padding: 1px;
   position: relative;
   &:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 15px;
   }
   .add-to-wishlist,
   .remove-from-wishlist {
@@ -37,7 +37,7 @@
     cursor: pointer;
     width: 100%;
     // min-height: 75%;
-    height: 400px;
+    height: 380px;
     // border-radius: 5px;
     background-size: cover;
     background-position: center;
