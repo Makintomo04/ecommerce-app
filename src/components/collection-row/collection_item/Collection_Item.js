@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./collection_item.scss";
 import AddToBag from "./images/addToBag.png";
 import { connect } from "react-redux";
@@ -13,11 +13,18 @@ const Collection_Item = ({
   addItem,
   addFavItem,
   removeFavItem,
-  favItem,
+  favItems,
   wishlist,
 }) => {
+  // let favedItems = favItems.map(
+  //   ({ fav, id }) =>
+  //     id === item.id && console.log("DORDOM", { id: id, fav: fav })
+  // );
   const [isFav, setIsFav] = useState(false);
   const { brand, name, price, imageUrl } = item;
+  useEffect(() => {
+    favItems.map(({ fav, id }) => item.id === id && setIsFav(fav));
+  }, [favItems]);
   const addToWishlist = () => {
     setIsFav(!isFav);
     if (isFav === false) {
@@ -30,7 +37,6 @@ const Collection_Item = ({
     <div className="collection_item">
       {!wishlist ? (
         <span className="add-to-wishlist" onClick={() => addToWishlist()}>
-          {console.log(isFav)}
           {!isFav ? <i class="far fa-heart"></i> : <i class="fas fa-heart"></i>}
         </span>
       ) : (
@@ -56,8 +62,8 @@ const Collection_Item = ({
     </div>
   );
 };
-const mapStateToProp = ({ wishlist }) => ({
-  favItem: wishlist.favItems.map((favItem) => favItem),
+const mapStateToProp = ({ wishlist: { favItems } }) => ({
+  favItems,
 });
 const mapDispatchToProps = (dispatch) => ({
   addItem: (item) => dispatch(addItem(item)),

@@ -9,5 +9,6 @@ export const addItemToWishList = (favItems, favItemToAdd) => {
   }
   return [...favItems, { ...favItemToAdd, fav: true }];
 };
-export const removeItemFromWishList = (favItems, favItemToRemove) =>
-  favItems.filter((favItem) => favItem.id != favItemToRemove.id);
+export const removeItemFromWishList = (favItems, favItemToRemove) => {
+  return favItems.filter((favItem) => favItem.id != favItemToRemove.id);
+};
