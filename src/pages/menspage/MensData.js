@@ -1,7 +1,7 @@
-import slimShirt from "../../components/collection-row/collection_item/images/fs_slim_tee.jpg";
-import hoodie from "../../components/collection-row/collection_item/images/hoodie.jpg";
-import hummel from "../../components/collection-row/collection_item/images/hummel.jpg";
-import fpBeanie from "../../components/collection-row/collection_item/images/fpHat.jpg";
+import slimShirt from "../../components/collection-row/collection_item/images/men/fs_slim_tee.jpg";
+import hoodie from "../../components/collection-row/collection_item/images/men/hoodie.jpg";
+import hummel from "../../components/collection-row/collection_item/images/men/hummel.jpg";
+import fpBeanie from "../../components/collection-row/collection_item/images/men/fpHat.jpg";
 const MensData = [
   {
     id: 1,
@@ -14,6 +14,7 @@ const MensData = [
         name: "Slim fit in green",
         imageUrl: `${slimShirt}`,
         price: 65,
+        preview: true,
       },
       {
         id: 2,
@@ -21,6 +22,8 @@ const MensData = [
         name: "Small logo sweatshirt in black",
         imageUrl: `${hummel}`,
         price: 55,
+        preview: true,
+        newin: true,
       },
       {
         id: 3,
@@ -28,14 +31,18 @@ const MensData = [
         name: "Lounge hoodie with chest logo",
         imageUrl: `${hoodie}`,
         price: 72,
+        preview: true,
+        newin: true,
       },
       {
         id: 4,
         brand: "Fred Perry",
         name: "Roll up beanie hat in black",
         imageUrl: `${fpBeanie}`,
-
         price: 40,
+        preview: true,
+        newin: true,
+        category: "accessory",
       },
       {
         id: 5,

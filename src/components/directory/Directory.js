@@ -8,37 +8,37 @@ const Directory = () => {
       id: 1,
       title: "Mens",
       img_URL: `/Makintomo04/ecommerce-app/static/media/men3.a9dea04a.jpg`,
-      link_URL: "Mens",
+      link_URL: "mens",
     },
     {
       id: 2,
       title: "Womens",
       img_URL: "/Makintomo04/ecommerce-app/static/media/women2.69141f75.jpg",
-      link_URL: "",
+      link_URL: "womens",
     },
     {
       id: 3,
       title: "Shoes",
       img_URL: "/Makintomo04/ecommerce-app/static/media/creps.2af0247c.jpg",
-      link_URL: "",
+      link_URL: "shoes",
     },
     {
       id: 4,
       title: "Accessories",
       img_URL: "/Makintomo04/ecommerce-app/static/media/accessory.fac7c75c.jpg",
-      link_URL: "",
+      link_URL: "accessories",
     },
     {
       id: 5,
       title: "Activewear",
       img_URL: "/Makintomo04/ecommerce-app/static/media/brand2.0a95648d.jpg",
-      link_URL: "",
+      link_URL: "activewear",
     },
     {
       id: 6,
       title: "Brands",
       img_URL: "/Makintomo04/ecommerce-app/static/media/nike.52712c27.jpg",
-      link_URL: "",
+      link_URL: "brands",
     },
   ]);
   return (

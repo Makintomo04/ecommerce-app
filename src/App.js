@@ -3,6 +3,7 @@ import "./App.scss";
 import LoginPage from "./pages/sign-in-sign-up/SignInSignUp";
 import HomePage from "./pages/homepage/HomePage";
 import MensPage from "./pages/menspage/MensPage";
+import WomensPage from "./pages/womenspage/WomensPage";
 import ShoesPage from "./pages/shoespage/Shoes";
 import CheckoutPage from "./pages/checkoutpage/Checkout";
 import WishListPage from "./pages/wishlistpage/WishList";
@@ -55,7 +56,8 @@ class App extends React.Component {
                 this.props.currentUser ? <Redirect to="/" /> : <LoginPage />
               }
             />
-            <Route path="/mens" component={MensPage} />
+            <Route exact path="/mens" component={MensPage} />
+            <Route exact path="/womens" component={WomensPage} />
             <Route path="/shoes" component={ShoesPage} />
             <Route exact path="/checkout" component={CheckoutPage} />
             <Route exact path="/wishlist" component={WishListPage} />
