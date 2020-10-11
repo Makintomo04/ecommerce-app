@@ -8,4 +8,8 @@
 .preview_items {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  div {
+    flex: 1 0 21%;
+  }
 }

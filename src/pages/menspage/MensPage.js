@@ -17,7 +17,7 @@ const MensPage = () => {
           from our experts? You'll find it all here.
         </p>
         {collections.map(({ id, ...remainingProps }) => (
-          <Collection_Row key={id} {...remainingProps} />
+          <Collection_Row key={id} {...remainingProps} isPreview />
         ))}
         <span className="mens-page__newIn-link">
           <Link to="/new-in">SHOP NOW</Link>
