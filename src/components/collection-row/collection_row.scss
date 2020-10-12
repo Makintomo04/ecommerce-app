@@ -6,10 +6,11 @@
   }
 }
 .preview_items {
-  display: flex;
+  display: grid;
+  grid-template-columns: 290px 290px 290px 290px;
   justify-content: space-between;
-  flex-wrap: wrap;
+  grid-gap: 15px;
   div {
-    flex: 1 0 21%;
+    width: 290px;
   }
 }
