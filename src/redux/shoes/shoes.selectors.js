@@ -2,15 +2,20 @@ import { createSelector } from "reselect";
 
 const selectShoes = (state) => state.shoes;
 
-export const selectShoeItems = createSelector(
+export const selectShoesCollection = createSelector(
   [selectShoes],
   (shoes) => shoes.directory
 );
+export const selectAllShoeItems = createSelector(
+  [selectShoesCollection],
+  (directory) => directory[0].items
+);
 
-export const selectMensShoes = createSelector([selectShoeItems], (directory) =>
-  directory[0].items.filter(({ gender }) => gender === "mens")
+export const selectMensShoes = createSelector(
+  [selectShoesCollection],
+  (directory) => directory[0].items.filter(({ gender }) => gender === "mens")
 );
 export const selectWomensShoes = createSelector(
-  [selectShoeItems],
+  [selectShoesCollection],
   (directory) => directory[0].items.filter(({ gender }) => gender === "womens")
 );

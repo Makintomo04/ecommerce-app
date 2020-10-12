@@ -8,13 +8,21 @@ import { filterShoes } from "../../redux/shoes/shoes.actions";
 import {
   selectMensShoes,
   selectWomensShoes,
-  selectShoeItems,
+  selectShoesCollection,
+  selectAllShoeItems,
 } from "../../redux/shoes/shoes.selectors";
 import { createStructuredSelector } from "reselect";
-const Shoes = ({ directory, filterShoes, shoes, mensShoes, womensShoes }) => {
+const Shoes = ({
+  directory,
+  filterShoes,
+  shoes,
+  allShoes,
+  mensShoes,
+  womensShoes,
+}) => {
   const [shoeFilter, setShoeFilter] = useState("all");
-  console.log(shoes);
   let tempfilter = shoes;
+  console.log(tempfilter);
   const handleClick = (filter) => {
     if (filter === "mens") {
       tempfilter[0].items = mensShoes;
@@ -22,8 +30,8 @@ const Shoes = ({ directory, filterShoes, shoes, mensShoes, womensShoes }) => {
     } else if (filter === "womens") {
       tempfilter[0].items = womensShoes;
       setShoeFilter(filter);
-    } else {
-      tempfilter = shoes;
+    } else if (filter === "all") {
+      tempfilter[0].items = allShoes;
       setShoeFilter("all");
     }
   };
@@ -37,6 +45,7 @@ const Shoes = ({ directory, filterShoes, shoes, mensShoes, womensShoes }) => {
           shoes.
         </p>
         <div className="shoes-page__filter">
+          <span onClick={() => handleClick("all")}> All</span>
           <span onClick={() => handleClick("mens")}> Men's Shoes</span>
           <span onClick={() => handleClick("womens")}> Women's Shoes</span>
         </div>
@@ -48,7 +57,8 @@ const Shoes = ({ directory, filterShoes, shoes, mensShoes, womensShoes }) => {
   );
 };
 const mapStateToProps = createStructuredSelector({
-  shoes: selectShoeItems,
+  shoes: selectShoesCollection,
+  allShoes: selectAllShoeItems,
   mensShoes: selectMensShoes,
   womensShoes: selectWomensShoes,
 });
