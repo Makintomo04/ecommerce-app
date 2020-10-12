@@ -5,6 +5,7 @@ import HomePage from "./pages/homepage/HomePage";
 import MensPage from "./pages/menspage/MensPage";
 import WomensPage from "./pages/womenspage/WomensPage";
 import ShoesPage from "./pages/shoespage/Shoes";
+import AccessoriesPage from "./pages/accessoriespage/Accessories";
 import CheckoutPage from "./pages/checkoutpage/Checkout";
 import WishListPage from "./pages/wishlistpage/WishList";
 import Directory from "./components/directory/Directory";
@@ -59,6 +60,7 @@ class App extends React.Component {
             <Route exact path="/mens" component={MensPage} />
             <Route exact path="/womens" component={WomensPage} />
             <Route path="/shoes" component={ShoesPage} />
+            <Route path="/accessories" component={AccessoriesPage} />
             <Route exact path="/checkout" component={CheckoutPage} />
             <Route exact path="/wishlist" component={WishListPage} />
           </Switch>

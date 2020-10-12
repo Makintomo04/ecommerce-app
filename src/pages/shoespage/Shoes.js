@@ -24,15 +24,14 @@ const Shoes = ({
   let tempfilter = shoes;
   console.log(tempfilter);
   const handleClick = (filter) => {
+    tempfilter[0].items = allShoes;
+    setShoeFilter("all");
     if (filter === "mens") {
       tempfilter[0].items = mensShoes;
-      setShoeFilter(filter);
+      setShoeFilter("mens");
     } else if (filter === "womens") {
       tempfilter[0].items = womensShoes;
-      setShoeFilter(filter);
-    } else if (filter === "all") {
-      tempfilter[0].items = allShoes;
-      setShoeFilter("all");
+      setShoeFilter("womens");
     }
   };
   return (
@@ -45,11 +44,11 @@ const Shoes = ({
           shoes.
         </p>
         <div className="shoes-page__filter">
-          <span onClick={() => handleClick("all")}> All</span>
-          <span onClick={() => handleClick("mens")}> Men's Shoes</span>
-          <span onClick={() => handleClick("womens")}> Women's Shoes</span>
+          <span onClick={() => handleClick("all")}>All</span>
+          <span onClick={() => handleClick("mens")}>Men's Shoes</span>
+          <span onClick={() => handleClick("womens")}>Women's Shoes</span>
         </div>
-        {shoes.map(({ id, ...remainingProps }) => (
+        {tempfilter.map(({ id, ...remainingProps }) => (
           <Collection_Row key={id} {...remainingProps} noTitle />
         ))}
       </div>
