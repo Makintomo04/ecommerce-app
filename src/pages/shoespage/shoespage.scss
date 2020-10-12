@@ -14,12 +14,18 @@
   margin-bottom: 80px;
   color: #444;
 }
-.shoes-page__newIn-link {
-  margin: 80px 0;
+.shoes-page__filter {
   display: flex;
-  justify-content: center;
-
-  & a {
-    color: black;
+  // background: chocolate;
+  justify-content: space-around;
+  width: 350px;
+  margin: auto;
+  margin-bottom: 50px;
+  color: #444;
+  & span {
+    border-bottom: 1px solid #444;
   }
+  cursor: pointer;
+  // text-align: center;
+  // margin: auto;
 }

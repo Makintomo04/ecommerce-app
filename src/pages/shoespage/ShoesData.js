@@ -24,6 +24,7 @@ const ShoesData = [
         imageUrl: `${sandals}`,
         price: 7,
         preview: true,
+        gender: "womens",
       },
       {
         id: 22,
@@ -32,7 +33,7 @@ const ShoesData = [
         imageUrl: `${chelseaboots}`,
         price: 32,
         preview: true,
-        newin: true,
+        gender: "mens",
       },
       {
         id: 23,
@@ -42,6 +43,7 @@ const ShoesData = [
         price: 60,
         preview: true,
         newin: true,
+        gender: "mens",
       },
 
       {
@@ -50,6 +52,7 @@ const ShoesData = [
         name: "Katy grey block heeled shoes",
         imageUrl: `${heels}`,
         price: 13,
+        gender: "womens",
       },
       {
         id: 25,
@@ -57,6 +60,7 @@ const ShoesData = [
         name: "Chunky sole plimsole in silver",
         imageUrl: `${veromodaplim}`,
         price: 28,
+        gender: "womens",
       },
       {
         id: 26,
@@ -64,6 +68,7 @@ const ShoesData = [
         name: "Heeled sock boots in black",
         imageUrl: `${sockboot}`,
         price: 85,
+        gender: "womens",
       },
       {
         id: 27,
@@ -74,6 +79,7 @@ const ShoesData = [
         preview: true,
         newin: true,
         category: "shoe",
+        gender: "mens",
       },
       {
         id: 28,
@@ -81,6 +87,7 @@ const ShoesData = [
         name: "Leather brogue lace up in black",
         imageUrl: `${brouge}`,
         price: 26,
+        gender: "mens",
       },
       {
         id: 29,
@@ -88,6 +95,7 @@ const ShoesData = [
         name: "Sock trainer in black",
         imageUrl: `${kgsock}`,
         price: 65,
+        gender: "mens",
       },
       {
         id: 30,
@@ -95,6 +103,7 @@ const ShoesData = [
         name: "Flat pull on knee boots in black",
         imageUrl: `${kneeboots}`,
         price: 25,
+        gender: "womens",
       },
       {
         id: 31,
@@ -102,13 +111,15 @@ const ShoesData = [
         name: "Flatform trainers in sand",
         imageUrl: `${pbtrainer}`,
         price: 15,
+        gender: "womens",
       },
       {
-        id: 26,
+        id: 32,
         brand: "New Balance",
         name: "393 trainers in grey",
         imageUrl: `${nb}`,
         price: 25,
+        gender: "mens",
       },
     ],
   },
