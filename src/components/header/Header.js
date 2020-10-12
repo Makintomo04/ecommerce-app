@@ -73,6 +73,9 @@ const Header = ({ currentUser, hidden, setCartHidden, cartItems, history }) => {
       <nav>
         <ul className="nav-links">
           <li>
+            <Link to="/brands">New In</Link>
+          </li>
+          <li>
             <Link to="/mens">Mens</Link>
           </li>
           <li>
@@ -86,9 +89,6 @@ const Header = ({ currentUser, hidden, setCartHidden, cartItems, history }) => {
           </li>
           <li>
             <Link to="/activewear">Activewear</Link>
-          </li>
-          <li>
-            <Link to="/brands">Brands</Link>
           </li>
         </ul>
       </nav>

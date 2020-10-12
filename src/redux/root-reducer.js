@@ -6,6 +6,7 @@ import cartReducer from "./cart/cart.reducer";
 import wishlistReducer from "./wishlist/wishlist.reducer";
 import shoesReducer from "./shoes/shoes.reducer";
 import accessoriesReducer from "./accessories/accessories.reducer";
+import activewearReducer from "./activewear/activewear.reducer";
 
 const persistConfig = {
   key: "root",
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   wishlist: wishlistReducer,
   shoes: shoesReducer,
   accessories: accessoriesReducer,
+  activewear: activewearReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
