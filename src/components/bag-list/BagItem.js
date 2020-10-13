@@ -27,6 +27,7 @@ const BagItem = ({
   return (
     <div className="bag-item">
       <img src={item.imageUrl} alt="item" />
+
       <div className="bag-item__details">
         <span className="bag-item__details__brand">{item.brand}</span>
         <span className="bag-item__details__name">{item.name}</span>
@@ -40,6 +41,7 @@ const BagItem = ({
           <span className="arrow" onClick={() => addItem(item)}>
             &#10095;
           </span>
+
           {/* <select
             name="quantity"
             value={quantityVal}
@@ -54,6 +56,9 @@ const BagItem = ({
           </select> */}
         </div>
       </div>
+      <span className="remove-from-cart" onClick={() => removeItem(item)}>
+        <i class="far fa-trash-alt"></i>
+      </span>
     </div>
   );
 };

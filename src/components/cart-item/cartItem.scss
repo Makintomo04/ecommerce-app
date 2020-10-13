@@ -2,6 +2,12 @@
   & img {
     width: 100px;
   }
+  & .remove-from-cart i {
+    cursor: pointer;
+    &:hover {
+      color: red;
+    }
+  }
   //   background: pink;
   //   border: 2px black solid;
   padding: 20px;

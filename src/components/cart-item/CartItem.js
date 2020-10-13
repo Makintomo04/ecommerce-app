@@ -1,6 +1,10 @@
 import React from "react";
 import "./cartItem.scss";
-const CartItem = ({ item: { imageUrl, price, name, quantity } }) => {
+import { createStructuredSelector } from "reselect";
+import { removeItem } from "../../redux/cart/cart.actions";
+import { connect } from "react-redux";
+const CartItem = ({ item, removeItem }) => {
+  const { imageUrl, price, name, quantity } = item;
   return (
     <div className="cart-item">
       <img src={imageUrl} alt={name} />
@@ -9,8 +13,13 @@ const CartItem = ({ item: { imageUrl, price, name, quantity } }) => {
         <span className="cart-item__details__name">{name}</span>
         <span className="cart-item__details__name">Qty: {quantity}</span>
       </div>
+      <span className="remove-from-cart" onClick={() => removeItem(item)}>
+        <i class="far fa-trash-alt"></i>
+      </span>
     </div>
   );
 };
-
-export default CartItem;
+const mapDispatchToProps = (dispatch) => ({
+  removeItem: (item) => dispatch(removeItem(item)),
+});
+export default connect(null, mapDispatchToProps)(CartItem);
