@@ -1,0 +1,50 @@
+.bag-item {
+  height: auto;
+  display: flex;
+  border-bottom: 1px solid rgb(197, 197, 197);
+  //   background: #444;
+  align-items: flex-start;
+  padding: 30px;
+  & img {
+    width: 140px;
+  }
+
+  &__details {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    &__brand {
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      font-weight: bold;
+      //   padding-bottom: 5px;
+    }
+    &__name {
+      padding-bottom: 10px;
+    }
+    &__price {
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding-bottom: 25px;
+    }
+    &__quantity {
+      & span {
+        font-size: 0.8rem;
+        padding-bottom: 5px;
+      }
+      display: flex;
+      flex-direction: column;
+      & select {
+        cursor: pointer;
+        width: 60px;
+        height: 30px;
+        background: none;
+        border: none;
+        border-bottom: 2px solid black;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}

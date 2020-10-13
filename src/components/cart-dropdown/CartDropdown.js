@@ -7,12 +7,23 @@ import { createStructuredSelector } from "reselect";
 import { setCartHidden } from "../../redux/cart/cart.actions";
 import CartItem from "../cart-item/CartItem";
 import {
+  selectCartItemsTotal,
   selectCartItemsCount,
   selectCartItems,
 } from "../../redux/cart/cart.selectors";
-const CartDropdown = ({ setCartHidden, cartItems, itemCount, history }) => {
+const CartDropdown = ({
+  setCartHidden,
+  cartItems,
+  itemCount,
+  itemTotal,
+  history,
+}) => {
   const goToCheckout = () => {
     history.push("./checkout");
+    setCartHidden(true);
+  };
+  const goToBag = () => {
+    history.push("./bag");
     setCartHidden(true);
   };
   return (
@@ -47,8 +58,12 @@ const CartDropdown = ({ setCartHidden, cartItems, itemCount, history }) => {
             <span>Your bag is empty</span>
           </div>
         )}
+        <div className="cart-dropdown__total">
+          <span>Total: </span>
+          <span>£{itemTotal}.00</span>
+        </div>
         <div className="cart-dropdown__buttons" style={{ display: "flex" }}>
-          <Button type="submit" theme="view-bag">
+          <Button type="submit" theme="view-bag" onClick={goToBag}>
             View Bag
           </Button>
           <Button type="submit" onClick={goToCheckout}>
@@ -62,6 +77,7 @@ const CartDropdown = ({ setCartHidden, cartItems, itemCount, history }) => {
 const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
   itemCount: selectCartItemsCount,
+  itemTotal: selectCartItemsTotal,
 });
 const mapDispatchToProps = (dispatch) => ({
   setCartHidden: (bool) => dispatch(setCartHidden(bool)),

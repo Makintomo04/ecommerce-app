@@ -9,6 +9,7 @@ import AccessoriesPage from "./pages/accessoriespage/Accessories";
 import ActivewearPage from "./pages/activewearpage/Activewear";
 import CheckoutPage from "./pages/checkoutpage/Checkout";
 import WishListPage from "./pages/wishlistpage/WishList";
+import Bag from "./pages/bagpage/BagPage";
 import Directory from "./components/directory/Directory";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Header from "./components/header/Header";
@@ -64,6 +65,7 @@ class App extends React.Component {
             <Route path="/accessories" component={AccessoriesPage} />
             <Route path="/activewear" component={ActivewearPage} />
             <Route exact path="/checkout" component={CheckoutPage} />
+            <Route exact path="/bag" component={Bag} />
             <Route exact path="/wishlist" component={WishListPage} />
           </Switch>
         </div>

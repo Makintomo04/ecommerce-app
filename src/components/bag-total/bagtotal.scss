@@ -1,0 +1,21 @@
+.bag-total {
+  padding: 30px;
+  text-align: center;
+  background: #eeeeee;
+  height: 100%;
+  margin: 125px 0 30px 30px;
+  & h2 {
+    padding-bottom: 20px;
+  }
+  &__count {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  & h3 {
+    padding-bottom: 20px;
+  }
+  & button {
+    width: 100%;
+  }
+}
