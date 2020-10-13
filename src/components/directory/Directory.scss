@@ -3,8 +3,8 @@
   display: grid;
 
   grid-template-areas:
-    "men women shoes accessories"
-    "men  women activewear brands";
+    "men women brands shoes"
+    "men  women accessories activewear ";
 
   grid-template-rows: 260px 260px;
   grid-template-columns: 300px 300px minmax(250px, auto) minmax(250px, auto);

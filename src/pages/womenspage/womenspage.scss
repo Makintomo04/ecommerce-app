@@ -23,3 +23,21 @@
     color: black;
   }
 }
+.womens-page__banner {
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 80px;
+  & img {
+    // margin: 0px 0 60px;
+    object-fit: cover;
+    height: 575px;
+    width: 100%;
+    // padding: 0 80px;
+    z-index: -1;
+    filter: saturate(0.6);
+  }
+}

@@ -36,9 +36,9 @@ const Directory = () => {
     },
     {
       id: 6,
-      title: "Brands",
+      title: "Clothing",
       img_URL: "/Makintomo04/ecommerce-app/static/media/nike.52712c27.jpg",
-      link_URL: "brands",
+      link_URL: "clothing",
     },
   ]);
   return (

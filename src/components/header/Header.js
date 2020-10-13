@@ -79,6 +79,9 @@ const Header = ({ currentUser, hidden, setCartHidden, cartItems, history }) => {
             <Link to="/womens">Womens</Link>
           </li>
           <li>
+            <Link to="/clothing">clothing</Link>
+          </li>
+          <li>
             <Link to="/shoes">Shoes</Link>
           </li>
           <li>
@@ -86,9 +89,6 @@ const Header = ({ currentUser, hidden, setCartHidden, cartItems, history }) => {
           </li>
           <li>
             <Link to="/activewear">Activewear</Link>
-          </li>
-          <li>
-            <Link to="/brands">Brands</Link>
           </li>
         </ul>
       </nav>
