@@ -39,7 +39,7 @@ footer {
       display: flex;
       justify-content: space-between;
       & li i {
-        font-size: 24px;
+        font-size: 1rem;
         cursor: pointer;
         &:hover {
           color: #777;
@@ -51,6 +51,7 @@ footer {
   .copyright {
     color: #777;
     margin-top: 30px;
+    font-size: 0.875rem;
     width: 100%;
     text-align: center;
     padding-top: 20px;
