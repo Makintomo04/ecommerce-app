@@ -11,12 +11,12 @@ const BlogData = [
   {
     id: 2,
     imageURL: `${field}`,
-    title: "14 Common Misconceptions About Fashion",
+    title: "The Helmut Depay Archive",
   },
   {
     id: 3,
     imageURL: `${window}`,
-    title: "The Helmut Depay Archive",
+    title: "14 Common Misconceptions About Fashion",
   },
   {
     id: 4,
