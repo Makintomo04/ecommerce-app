@@ -24,6 +24,16 @@ const HomePage = () => {
         <img src={banner} alt="" />
       </div>
       <Directory />
+      <div className="message-banner">
+        <h2>
+          Due to high demand our deliveries are taking longer than normal right
+          now
+        </h2>
+        <p>
+          Our delivery time is 6-8 days. Can't wait? Our stores are open and
+          welcome you to shop safely everyday.
+        </p>
+      </div>
       <Blog />
       <Email_List />
     </div>
