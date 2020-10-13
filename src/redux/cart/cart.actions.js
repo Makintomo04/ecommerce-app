@@ -7,3 +7,16 @@ export const addItem = (item) => ({
   type: cartActionTypes.ADD_ITEM,
   payload: item,
 });
+export const removeItem = (item) => ({
+  type: cartActionTypes.REMOVE_ITEM,
+  payload: item,
+});
+export const reduceItemQuantity = (item) => ({
+  type: cartActionTypes.REDUCE_ITEM_QUANTITY,
+  payload: item,
+});
+export const adjustQuantity = (item, value) => ({
+  type: cartActionTypes.ADJUST_QUANTITY,
+  payload: item,
+  value: value,
+});

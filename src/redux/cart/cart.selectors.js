@@ -20,6 +20,10 @@ export const selectCartItemsCount = createSelector(
       0
     )
 );
+export const selectCartItemQuantity = createSelector(
+  [selectCartItems],
+  (cartItems) => cartItems.map((cartItem) => cartItem.quantity)
+);
 export const selectCartItemsTotal = createSelector(
   [selectCartItems],
   (cartItems) =>
