@@ -60,5 +60,13 @@
         }
       }
     }
+    height: 100%;
+    &__to-wishlist {
+      cursor: pointer;
+      margin-top: auto;
+      &:hover {
+        color: red;
+      }
+    }
   }
 }

@@ -9,9 +9,11 @@ import {
   removeItem,
   reduceItemQuantity,
 } from "../../redux/cart/cart.actions";
+import { addFavItem } from "../../redux/wishlist/wishlist.actions";
 const BagItem = ({
   item,
   adjustQuantity,
+  MoveToWishlist,
   addItem,
   removeItem,
   reduceItemQuantity,
@@ -23,6 +25,10 @@ const BagItem = ({
     setQuantityVal(value);
     console.log("val>>>", quantityVal);
     // adjustQuantity(item, parseInt(quantityVal));
+  };
+  const handleMoveToWishlist = async () => {
+    await removeItem(item);
+    MoveToWishlist(item);
   };
   return (
     <div className="bag-item">
@@ -41,7 +47,6 @@ const BagItem = ({
           <span className="arrow" onClick={() => addItem(item)}>
             &#10095;
           </span>
-
           {/* <select
             name="quantity"
             value={quantityVal}
@@ -55,6 +60,12 @@ const BagItem = ({
             <option value={5}>5</option>
           </select> */}
         </div>
+        <span
+          className="bag-item__details__to-wishlist"
+          onClick={handleMoveToWishlist}
+        >
+          <i class="far fa-heart"></i> Move to wishlist
+        </span>
       </div>
       <span className="remove-from-cart" onClick={() => removeItem(item)}>
         <i class="far fa-trash-alt"></i>
@@ -66,6 +77,7 @@ const mapStateToProps = createStructuredSelector({
   itemQuantity: selectCartItemQuantity,
 });
 const mapDispatchToProps = (dispatch) => ({
+  MoveToWishlist: (item) => dispatch(addFavItem(item)),
   addItem: (item) => dispatch(addItem(item)),
   removeItem: (item) => dispatch(removeItem(item)),
   reduceItemQuantity: (item) => dispatch(reduceItemQuantity(item)),
