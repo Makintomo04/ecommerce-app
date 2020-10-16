@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import "./checkoutItems.scss";
 import { withRouter } from "react-router-dom";
 import Button from "../button/Button";
+import { setPromo } from "../../redux/cart/cart.actions";
 const CheckoutItems = ({
   cartItems,
   cartTotal,
@@ -18,6 +19,7 @@ const CheckoutItems = ({
   promoCode,
   cartCount,
   discountedCartTotal,
+  setPromo,
 }) => {
   let total = cartTotal;
   // promoCode === "ABC123" ? (total = cartTotal - 5) : (total = total);
@@ -51,8 +53,38 @@ const CheckoutItems = ({
         </div>
         {promoCode === "ABC123" && (
           <div className="checkout-items__summarydetails__discount">
-            <p>Discount</p>
-            <p>- £5.00</p>
+            <div
+              className=""
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+              }}
+            >
+              <p>Promo code Applied:</p>
+              <p style={{ color: "#777" }}>ABC123</p>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-end",
+              }}
+            >
+              {" "}
+              <p>- £{Math.round(cartTotal * 0.1)}.00</p>
+              <p
+                style={{
+                  cursor: "pointer",
+                  borderBottom: "1px solid #777",
+                  color: "#777",
+                }}
+                onClick={() => setPromo("")}
+              >
+                Remove
+              </p>
+            </div>
           </div>
         )}
 
@@ -64,7 +96,7 @@ const CheckoutItems = ({
             <p>£{cartTotal}.00</p>
           )}
         </div>
-        <Button>Place Order</Button>
+        <Button>PLACE ORDER</Button>
       </div>
     </div>
   );
@@ -76,4 +108,9 @@ const mapStateToProps = (state) => ({
   discountedCartTotal: selectCartItemsdiscountedTotal(state),
   promoCode: state.cart.promoCode,
 });
-export default withRouter(connect(mapStateToProps, null)(CheckoutItems));
+const mapDispatchToProps = (dispatch) => ({
+  setPromo: (promo) => dispatch(setPromo(promo)),
+});
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(CheckoutItems)
+);

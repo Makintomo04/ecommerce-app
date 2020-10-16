@@ -16,7 +16,7 @@ const PromoInput = ({ promoCode, setPromo }) => {
     setPromoInput(e.target.value);
   };
   const handleSetPromo = () => {
-    setPromo(promoInput);
+    promoInput == "ABC123" && setPromo(promoInput);
   };
   {
     console.log(promoCode);

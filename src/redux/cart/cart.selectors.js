@@ -38,7 +38,14 @@ export const selectCartItemsdiscountedTotal = createSelector(
   (cartItems) =>
     cartItems.reduce(
       (accumulatedQuantity, cartItem) =>
-        accumulatedQuantity + cartItem.quantity * cartItem.price - 5,
+        accumulatedQuantity + Math.trunc(cartItem.quantity * cartItem.price),
       0
+    ) -
+    Math.round(
+      cartItems.reduce(
+        (accumulatedQuantity, cartItem) =>
+          accumulatedQuantity + Math.trunc(cartItem.quantity * cartItem.price),
+        0
+      ) * 0.1
     )
 );
