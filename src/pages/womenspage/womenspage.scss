@@ -29,11 +29,13 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 100%;
   margin-bottom: 80px;
+  // margin: 1em -100%; /* old browsers fallback */
+  // margin: 1em calc(50% - 50vw);
   & img {
     // margin: 0px 0 60px;
     object-fit: cover;
+    object-position: center;
     height: 575px;
     width: 100%;
     // padding: 0 80px;

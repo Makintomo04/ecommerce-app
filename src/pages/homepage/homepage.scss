@@ -13,8 +13,9 @@
   align-items: center;
   //   padding: 20px 80px;
   position: relative;
+  z-index: 1;
   .banner {
-    z-index: -1;
+    z-index: -2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,12 +36,13 @@
       }
     }
     & img {
+      position: relative;
       margin: 0px 0 60px;
       object-fit: cover;
       height: 575px;
       width: 1920px;
-      padding: 0 80px;
-      z-index: -1;
+      // padding: 0 80px;
+      z-index: -2;
       filter: saturate(0.6);
     }
   }

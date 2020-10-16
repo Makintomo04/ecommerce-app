@@ -1,10 +1,12 @@
 .custom-button {
+  position: relative;
   padding: 15px;
   background: none;
   outline: none;
   background-color: black;
   color: white;
   border: 1px solid black;
+  z-index: 101;
   cursor: pointer;
   margin-top: 15px;
   width: 100%;
