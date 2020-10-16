@@ -17,6 +17,7 @@ const BagItem = ({
   addItem,
   removeItem,
   reduceItemQuantity,
+  checkout,
 }) => {
   const [quantityVal, setQuantityVal] = useState(item.quantity);
 
@@ -40,13 +41,17 @@ const BagItem = ({
         <span className="bag-item__details__price">£{item.price}.00</span>
         <span>Qty</span>
         <div className="bag-item__details__quantity">
-          <span className="arrow" onClick={() => reduceItemQuantity(item)}>
-            &#10094;
-          </span>
+          {!checkout && (
+            <span className="arrow" onClick={() => reduceItemQuantity(item)}>
+              &#10094;
+            </span>
+          )}
           <span className="no">{item.quantity}</span>
-          <span className="arrow" onClick={() => addItem(item)}>
-            &#10095;
-          </span>
+          {!checkout && (
+            <span className="arrow" onClick={() => addItem(item)}>
+              &#10095;
+            </span>
+          )}
           {/* <select
             name="quantity"
             value={quantityVal}
@@ -60,16 +65,20 @@ const BagItem = ({
             <option value={5}>5</option>
           </select> */}
         </div>
-        <span
-          className="bag-item__details__to-wishlist"
-          onClick={handleMoveToWishlist}
-        >
-          <i class="far fa-heart"></i> Move to wishlist
-        </span>
+        {!checkout && (
+          <span
+            className="bag-item__details__to-wishlist"
+            onClick={handleMoveToWishlist}
+          >
+            <i class="far fa-heart"></i> Move to wishlist
+          </span>
+        )}
       </div>
-      <span className="remove-from-cart" onClick={() => removeItem(item)}>
-        <i class="far fa-trash-alt"></i>
-      </span>
+      {!checkout && (
+        <span className="remove-from-cart" onClick={() => removeItem(item)}>
+          <i class="far fa-trash-alt"></i>
+        </span>
+      )}
     </div>
   );
 };

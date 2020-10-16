@@ -1,0 +1,19 @@
+.checkout-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #777;
+}
+.checkout-wrapper {
+  margin: 80px 0;
+}
+.checkout {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+  & h1 {
+    margin-bottom: 80px;
+  }
+}

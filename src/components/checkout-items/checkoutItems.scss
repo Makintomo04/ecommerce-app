@@ -1,0 +1,33 @@
+.checkout-items {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    // padding: 0 30px;
+    &__edit {
+      cursor: pointer;
+    }
+  }
+  & div {
+    padding-left: 0;
+  }
+  margin-top: 30px;
+  & ul {
+    padding-bottom: 50px;
+  }
+  & h3 {
+    padding-bottom: 50px;
+  }
+  &__summarydetails {
+    // padding: 30px;
+    &__subtotal,
+    &__total,
+    &__delivery {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 5px;
+
+      // font-weight: bold;
+      font-size: 18px;
+    }
+  }
+}
