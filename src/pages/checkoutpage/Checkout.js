@@ -4,8 +4,9 @@ import PromoInput from "../../components/promo/PromoInput";
 import DeliveryAddress from "../../components/deliveryAddress/DeliveryAddress";
 import CheckoutItems from "../../components/checkout-items/CheckoutItems";
 import PaymentInfo from "../../components/payment-info/PaymentInfo";
+import { connect } from "react-redux";
 const Checkout = () => {
-  const [promoCode, setPromoCode] = useState("");
+  // const [promoCode, setPromoCode] = useState("");
   return (
     <div className="checkout-wrapper">
       <div className="container">
@@ -13,15 +14,17 @@ const Checkout = () => {
         <div className="checkout">
           <div className="checkout__left">
             <DeliveryAddress />
-            <PromoInput setPromoCode={setPromoCode} promoCode={promoCode} />
+            <PromoInput />
             <PaymentInfo />
           </div>
           <div className="checkout__right"></div>
-          <CheckoutItems promoCode={promoCode} />
+          <CheckoutItems />
         </div>
       </div>
     </div>
   );
 };
-
-export default Checkout;
+const mapStateToProps = ({ cart }) => ({
+  promoCode: cart.promoCode,
+});
+export default connect(mapStateToProps, null)(Checkout);

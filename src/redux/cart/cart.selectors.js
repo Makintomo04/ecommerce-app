@@ -33,3 +33,12 @@ export const selectCartItemsTotal = createSelector(
       0
     )
 );
+export const selectCartItemsdiscountedTotal = createSelector(
+  [selectCartItems],
+  (cartItems) =>
+    cartItems.reduce(
+      (accumulatedQuantity, cartItem) =>
+        accumulatedQuantity + cartItem.quantity * cartItem.price - 5,
+      0
+    )
+);

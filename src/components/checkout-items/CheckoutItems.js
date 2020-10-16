@@ -4,6 +4,7 @@ import {
   selectCartItems,
   selectCartItemsTotal,
   selectCartItemsCount,
+  selectCartItemsdiscountedTotal,
 } from "../../redux/cart/cart.selectors";
 import BagItem from "../bag-list/BagItem";
 import { connect } from "react-redux";
@@ -16,9 +17,10 @@ const CheckoutItems = ({
   history,
   promoCode,
   cartCount,
+  discountedCartTotal,
 }) => {
   let total = cartTotal;
-  promoCode === "ABC123" ? (total = cartTotal - 5) : (total = total);
+  // promoCode === "ABC123" ? (total = cartTotal - 5) : (total = total);
   return (
     <div className="checkout-items">
       <div className="checkout-items__top">
@@ -56,16 +58,22 @@ const CheckoutItems = ({
 
         <div className="checkout-items__summarydetails__total">
           <p>Total</p>
-          {promoCode === "ABC123" ? <p>£{total}.00</p> : <p>£{total}.00</p>}
+          {promoCode === "ABC123" ? (
+            <p>£{discountedCartTotal}.00</p>
+          ) : (
+            <p>£{cartTotal}.00</p>
+          )}
         </div>
         <Button>Place Order</Button>
       </div>
     </div>
   );
 };
-const mapStateToProps = createStructuredSelector({
-  cartItems: selectCartItems,
-  cartCount: selectCartItemsCount,
-  cartTotal: selectCartItemsTotal,
+const mapStateToProps = (state) => ({
+  cartItems: selectCartItems(state),
+  cartCount: selectCartItemsCount(state),
+  cartTotal: selectCartItemsTotal(state),
+  discountedCartTotal: selectCartItemsdiscountedTotal(state),
+  promoCode: state.cart.promoCode,
 });
 export default withRouter(connect(mapStateToProps, null)(CheckoutItems));

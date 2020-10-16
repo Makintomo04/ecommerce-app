@@ -5,16 +5,22 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import { withStyles } from "@material-ui/core/styles/withStyles";
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { setPromo } from "../../redux/cart/cart.actions";
 
-const PromoInput = ({ setPromoCode, promoCode }) => {
-  const [promoinput, setPromoInput] = useState("");
+const PromoInput = ({ promoCode, setPromo }) => {
+  const [promoInput, setPromoInput] = useState("");
 
   const handleChange = (e) => {
     setPromoInput(e.target.value);
   };
-  const setPromo = () => {
-    setPromoCode(promoinput);
+  const handleSetPromo = () => {
+    setPromo(promoInput);
   };
+  {
+    console.log(promoCode);
+  }
   return (
     <div className="promoInput">
       <Accordion style={{ boxShadow: "none" }}>
@@ -44,10 +50,10 @@ const PromoInput = ({ setPromoCode, promoCode }) => {
               // required={true}
               type="recoverEmail"
               name="recoverEmail"
-              value={promoinput}
+              value={promoInput}
               handleChange={handleChange}
             />
-            {promoCode === "ABC123" && (
+            {promoCode == "ABC123" && (
               <span style={{ color: "green", margin: "0 0 20px" }}>
                 Your discount has been applied.
               </span>
@@ -59,7 +65,7 @@ const PromoInput = ({ setPromoCode, promoCode }) => {
             {/* </span> */}
             {/* ) */}
             <span style={{ color: "#444" }}>Psst try "ABC123"</span>
-            <Button type="button" onClick={setPromo}>
+            <Button type="button" onClick={handleSetPromo}>
               APPLY CODE
             </Button>
           </div>
@@ -68,5 +74,10 @@ const PromoInput = ({ setPromoCode, promoCode }) => {
     </div>
   );
 };
-
-export default PromoInput;
+const mapStateToProps = ({ cart }) => ({
+  promoCode: cart.promoCode,
+});
+const mapDispatchToProps = (dispatch) => ({
+  setPromo: (promo) => dispatch(setPromo(promo)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(PromoInput);

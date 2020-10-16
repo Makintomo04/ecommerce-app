@@ -3,6 +3,10 @@ export const setCartHidden = (bool) => ({
   type: cartActionTypes.SET_CART_HIDDEN,
   payload: bool,
 });
+export const setPromo = (promo) => ({
+  type: cartActionTypes.SET_PROMO,
+  payload: promo,
+});
 export const addItem = (item) => ({
   type: cartActionTypes.ADD_ITEM,
   payload: item,

@@ -8,6 +8,7 @@ import {
 const INITIAL_STATE = {
   hidden: true,
   cartItems: [],
+  promoCode: "",
 };
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -40,6 +41,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
           action.payload,
           action.value
         ),
+      };
+    case cartActionTypes.SET_PROMO:
+      return {
+        ...state,
+        promoCode: action.payload,
       };
 
     default:
