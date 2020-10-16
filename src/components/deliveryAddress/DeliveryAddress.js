@@ -9,6 +9,8 @@ const DeliveryAddress = ({ currentUser, cartItems }) => {
     <div className="delivery-address">
       <h2>Delivery Address</h2>
       <div className="delivery-address__details">
+        {console.log(currentUser)}
+        {/* <p>{currentUser?.email}</p> */}
         <p>{currentUser?.displayName || "Guest Customer"}</p>
         <p>123 Alphabet Street</p>
         <p>Numberville</p>

@@ -21,7 +21,8 @@
     // padding: 30px;
     &__subtotal,
     &__total,
-    &__delivery {
+    &__delivery,
+    &__discount {
       display: flex;
       justify-content: space-between;
       padding-bottom: 5px;

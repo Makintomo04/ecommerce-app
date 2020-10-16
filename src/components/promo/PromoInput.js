@@ -6,10 +6,14 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import { withStyles } from "@material-ui/core/styles/withStyles";
 import React, { useState } from "react";
 
-const PromoInput = () => {
+const PromoInput = ({ setPromoCode, promoCode }) => {
   const [promoinput, setPromoInput] = useState("");
+
   const handleChange = (e) => {
     setPromoInput(e.target.value);
+  };
+  const setPromo = () => {
+    setPromoCode(promoinput);
   };
   return (
     <div className="promoInput">
@@ -43,8 +47,21 @@ const PromoInput = () => {
               value={promoinput}
               handleChange={handleChange}
             />
+            {promoCode === "ABC123" && (
+              <span style={{ color: "green", margin: "0 0 20px" }}>
+                Your discount has been applied.
+              </span>
+            )}
+            {/* : ( */}
+            {/* <span style={{ color: "red" }}> */}
+            {/* Oops! The code you entered doesn't exist. Please check and try */}
+            {/* again. */}
+            {/* </span> */}
+            {/* ) */}
             <span style={{ color: "#444" }}>Psst try "ABC123"</span>
-            <Button type="button">APPLY CODE</Button>
+            <Button type="button" onClick={setPromo}>
+              APPLY CODE
+            </Button>
           </div>
         </AccordionDetails>
       </Accordion>
