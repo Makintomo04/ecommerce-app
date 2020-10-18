@@ -11,7 +11,7 @@ const PaymentInfo = () => {
           <p style={{ color: "red", paddingBottom: "20px" }}>
             *Please use the following test credit card information for payments*
           </p>
-          <p>4242 4242 4242 4242 - Exp: 01/20 - CVV: 123</p>
+          <p>4242 4242 4242 4242 - Exp: 12/20 - CVV: 123</p>
         </div>
       </div>
     </div>

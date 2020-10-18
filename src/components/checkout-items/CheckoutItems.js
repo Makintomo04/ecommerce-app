@@ -12,6 +12,7 @@ import "./checkoutItems.scss";
 import { withRouter } from "react-router-dom";
 import Button from "../button/Button";
 import { setPromo } from "../../redux/cart/cart.actions";
+import PayWithStripe from "../stripe/PayWithStripe";
 const CheckoutItems = ({
   cartItems,
   cartTotal,
@@ -21,7 +22,11 @@ const CheckoutItems = ({
   discountedCartTotal,
   setPromo,
 }) => {
-  let total = cartTotal;
+  let total = discountedCartTotal;
+  const handleRemove = () => {
+    // total = cartTotal;
+    setPromo("");
+  };
   // promoCode === "ABC123" ? (total = cartTotal - 5) : (total = total);
   return (
     <div className="checkout-items">
@@ -80,14 +85,13 @@ const CheckoutItems = ({
                   borderBottom: "1px solid #777",
                   color: "#777",
                 }}
-                onClick={() => setPromo("")}
+                onClick={handleRemove}
               >
                 Remove
               </p>
             </div>
           </div>
         )}
-
         <div className="checkout-items__summarydetails__total">
           <p>Total</p>
           {promoCode === "ABC123" ? (
@@ -96,7 +100,11 @@ const CheckoutItems = ({
             <p>£{cartTotal}.00</p>
           )}
         </div>
-        <Button>PLACE ORDER</Button>
+        {/* <Button>PLACE ORDER</Button> */}
+        <PayWithStripe
+          style={{ width: "100%" }}
+          price={promoCode === "ABC123" ? discountedCartTotal : cartTotal}
+        />
       </div>
     </div>
   );
