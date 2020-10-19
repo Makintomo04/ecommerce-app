@@ -11,7 +11,8 @@ const PayWithStripe = ({ price }) => {
   };
   return (
     <StripeCheckout
-      label="Pay Now"
+      className="orderButton"
+      label="PAY NOW"
       name="MARQ-E Clothing"
       description={`Your total is £${price}`}
       ComponentClass="div"

@@ -1,4 +1,10 @@
 button {
   width: 100%;
   //   border-radius: none !important;
+  & > div {
+    background: none;
+  }
+  & > span {
+    background: red;
+  }
 }

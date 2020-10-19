@@ -1,3 +1,3 @@
 export const activewearActionTypes = {
-  FILTER_ACCCESSORIES: "FILTER_ACCCESSORIES",
+  FILTER_ACTIVEWEAR: "FILTER_ACTIVEWEAR",
 };

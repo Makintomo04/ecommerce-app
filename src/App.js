@@ -4,6 +4,7 @@ import LoginPage from "./pages/sign-in-sign-up/SignInSignUp";
 import HomePage from "./pages/homepage/HomePage";
 import MensPage from "./pages/menspage/MensPage";
 import WomensPage from "./pages/womenspage/WomensPage";
+import ClothingPage from "./pages/clothingpage/Clothing";
 import ShoesPage from "./pages/shoespage/Shoes";
 import AccessoriesPage from "./pages/accessoriespage/Accessories";
 import ActivewearPage from "./pages/activewearpage/Activewear";
@@ -61,6 +62,7 @@ class App extends React.Component {
             />
             <Route exact path="/mens" component={MensPage} />
             <Route exact path="/womens" component={WomensPage} />
+            <Route path="/clothing" component={ClothingPage} />
             <Route path="/shoes" component={ShoesPage} />
             <Route path="/accessories" component={AccessoriesPage} />
             <Route path="/activewear" component={ActivewearPage} />

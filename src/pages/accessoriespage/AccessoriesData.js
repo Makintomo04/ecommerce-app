@@ -11,6 +11,7 @@ import mgoldring from "../../components/collection-row/collection_item/images/ac
 import mholdall from "../../components/collection-row/collection_item/images/accessories/men/holdall.jpg";
 import mkwatch from "../../components/collection-row/collection_item/images/accessories/men/mkwatch.jpg";
 import spiralbp from "../../components/collection-row/collection_item/images/accessories/men/spiralbp.jpg";
+import fpBeanie from "../../components/collection-row/collection_item/images/men/fpHat.jpg";
 const AccessoriesData = [
   {
     id: 3,
@@ -20,10 +21,18 @@ const AccessoriesData = [
       {
         id: 33,
         brand: "Bershka",
-        name: "Layered multi pendant necklace in silverk",
+        name: "Layered multi pendant necklace in silver",
         imageUrl: `${bershkachain}`,
         price: 8,
         preview: true,
+        gender: "mens",
+      },
+      {
+        id: 4,
+        brand: "Fred Perry",
+        name: "Roll up beanie hat in black",
+        imageUrl: `${fpBeanie}`,
+        price: 40,
         gender: "mens",
       },
       {

@@ -1,3 +1,3 @@
 export const accessoriesActionTypes = {
-  FILTER_ACCCESSORIES: "FILTER_ACCCESSORIES",
+  FILTER_ACCESSORIES: "FILTER_ACCESSORIES",
 };

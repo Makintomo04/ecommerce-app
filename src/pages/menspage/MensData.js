@@ -44,19 +44,6 @@ const MensData = [
         newin: true,
         category: "accessory",
       },
-      {
-        id: 5,
-        brand: "JKAttire",
-        name: "Jean Long Sleeve",
-        imageUrl: "https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png",
-        price: 40,
-      },
-      {
-        id: 6,
-        name: "Burgundy T-shirt",
-        imageUrl: "https://i.ibb.co/mh3VM1f/polka-dot-shirt.png",
-        price: 25,
-      },
     ],
   },
 ];
