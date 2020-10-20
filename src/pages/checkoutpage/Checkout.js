@@ -17,8 +17,9 @@ const Checkout = () => {
             <PromoInput />
             <PaymentInfo />
           </div>
-          <div className="checkout__right"></div>
-          <CheckoutItems />
+          <div className="checkout__right">
+            <CheckoutItems />
+          </div>
         </div>
       </div>
     </div>

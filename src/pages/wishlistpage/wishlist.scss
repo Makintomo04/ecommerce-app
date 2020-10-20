@@ -22,3 +22,35 @@
     }
   }
 }
+@media (max-width: 1240px) {
+  .wishlist__items {
+    grid-template-columns: 290px 290px 290px;
+    justify-content: center;
+  }
+}
+@media (max-width: 940px) {
+  .wishlist__items {
+    grid-template-columns: 290px 290px;
+    justify-content: center;
+  }
+}
+@media (max-width: 620px) {
+  .wishlist__items {
+    grid-template-columns: 225px 225px;
+    justify-content: center;
+    grid-gap: 10px;
+    & .collection_item {
+      width: 225px;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .wishlist__items {
+    grid-template-columns: 290px;
+    justify-content: center;
+    // grid-gap: 10px;
+    & .collection_item {
+      width: 290px;
+    }
+  }
+}

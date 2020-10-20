@@ -19,12 +19,3 @@ code {
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  font-family: "Roboto", sans-serif;
-  background: white;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  /* background: #dcd8cd; */
-  /* background: black; */
-}

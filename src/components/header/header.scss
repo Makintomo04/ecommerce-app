@@ -56,11 +56,15 @@
         cursor: pointer;
         font-size: 14px;
         // padding: 5px;
+        @media (max-width: 860px) {
+          font-size: 12;
+        }
       }
     }
   }
 }
 header {
+  padding: 0 30px;
   position: relative;
   min-height: 7.5vh;
   max-width: 1200px;
@@ -143,5 +147,30 @@ header {
       position: absolute;
       z-index: -10;
     }
+  }
+}
+@media (max-width: 1220px) {
+  header {
+    .lang {
+      flex: 2;
+      cursor: pointer;
+    }
+    .logo {
+      // background: indigo;
+      text-align: center;
+      flex: 8;
+    }
+    ul {
+      flex: 2;
+    }
+  }
+}
+@media (max-width: 840px) {
+  .header-bg .delivery_banner__inner__text {
+    display: none;
+  }
+  .header-bg .delivery_banner {
+    min-height: 10px;
+    padding: 0;
   }
 }

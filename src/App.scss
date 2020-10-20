@@ -3,9 +3,14 @@
   margin: 0 auto;
   height: auto;
   /* margin-top: 80px; */
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center; */
+  align-items: center;
+}
+@media (max-width: 1240px) {
+  .container {
+    max-width: 780px;
+  }
 }
 .App {
   display: flex;
@@ -14,4 +19,16 @@
   &__Content {
     flex: 1;
   }
+}
+body,
+html {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  // background: white;
+  /* background: #dcd8cd; */
+  /* background: black; */
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body {
 }

@@ -4,13 +4,13 @@
 }
 .checkout-wrapper {
   margin: 80px 0;
-  width: auto;
+  width: 100%;
 }
 .checkout {
   margin-top: 80px;
   display: flex;
-  flex-wrap: wrap;
-  width: auto;
+  // flex-wrap: wrap;
+  width: 100%;
   justify-content: space-between;
   &__left {
     display: flex;
@@ -18,5 +18,19 @@
   }
   & h1 {
     margin-bottom: 80px;
+  }
+}
+@media (max-width: 1240px) {
+  .checkout {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    .checkout__right {
+      margin-top: 80px;
+    }
   }
 }

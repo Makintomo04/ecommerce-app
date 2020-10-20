@@ -58,3 +58,8 @@ footer {
     border-top: 1px solid rgba(119, 119, 119, 0.5);
   }
 }
+@media (max-width: 1220px) {
+  footer {
+    max-width: 780px;
+  }
+}
