@@ -47,3 +47,13 @@
     filter: saturate(0.6);
   }
 }
+.categories-grid {
+  // background: black;
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  grid-gap: 40px;
+  margin: 80px 0;
+}
