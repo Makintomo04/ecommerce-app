@@ -1,0 +1,32 @@
+.gender-category {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: flex-start;
+  height: 720px;
+  width: 100%;
+  // background-color: hotpink;
+  // border: 2px solid red;
+  cursor: pointer;
+  &__image {
+    // position: absolute;
+    // top: 1;
+    flex: 7;
+    max-height: 100%;
+    width: 100%;
+    background: green;
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__title {
+    // background-color: purple;
+    padding: 10px 0 0;
+    font-weight: bold;
+    flex: 1;
+    margin-bottom: 10px;
+  }
+}
