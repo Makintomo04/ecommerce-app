@@ -19,11 +19,11 @@ const CartDropdown = ({
   history,
 }) => {
   const goToCheckout = () => {
-    history.push("./checkout");
+    history.push("/checkout");
     setCartHidden(true);
   };
   const goToBag = () => {
-    history.push("./bag");
+    history.push("/bag");
     setCartHidden(true);
   };
   return (

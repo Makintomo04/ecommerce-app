@@ -63,7 +63,7 @@ const Header = ({ currentUser, hidden, setCartHidden, cartItems, history }) => {
             )}
             {/* {console.log("yooo", currentUser)} */}
           </li>
-          <li onClick={() => history.push("./wishlist")}>
+          <li onClick={() => history.push("/wishlist")}>
             <i class="fas fa-heart"></i>
           </li>
           <li>
