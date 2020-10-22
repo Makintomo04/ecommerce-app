@@ -10,6 +10,7 @@ import shoes from "../../components/gender-category/images/womens/shoes.jpg";
 import Accessories from "../../components/gender-category/images/womens/accessories.jpg";
 import Activewear from "../../components/gender-category/images/womens/activewear.jpg";
 import { withRouter } from "react-router-dom";
+import Blog from "../../components/blog/Blog";
 const WomensComponent = ({ history }) => {
   const [womensCollection] = useState({
     collections: WomensData,
@@ -48,6 +49,7 @@ const WomensComponent = ({ history }) => {
         <GenderCategory gender="womens" title="activewear" image={Activewear} />
         {/* <GenderCategory title="" /> */}
       </div>
+      <Blog />
     </div>
   );
 };

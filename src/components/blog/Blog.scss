@@ -1,11 +1,12 @@
 .Blog {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   //   background-color: crimson;
   width: 100%;
   height: auto;
-  align-items: center;
-  align-content: space-between;
+  // align-items: center;
+  // align-content: space-between;
   padding-bottom: 80px;
   margin-bottom: 90px;
   &__heading {
@@ -22,7 +23,9 @@
   width: 100%;
   height: auto;
   display: flex;
-  //   justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  // align-items: center;
   //   border: 2px solid green;
 }
 .Blog__card {
@@ -35,6 +38,7 @@
   // border: 2px solid red;
   cursor: pointer;
   padding: 10px;
+  margin-bottom: 80px;
   &:first-child {
     padding-left: 0;
   }
