@@ -1,12 +1,22 @@
 .bag-item {
   height: auto;
   display: flex;
+
   border-bottom: 1px solid rgb(197, 197, 197);
   //   background: #444;
   align-items: flex-start;
-  padding: 30px;
+  padding: 30px 0;
+  // @media (max-width: 520px) {
+  //   align-items: center;
+
+  //   flex-direction: column;
+  //   text-align: center;
+  // }
   & img {
     width: 140px;
+    @media (max-width: 520px) {
+      width: 100px;
+    }
   }
   & .remove-from-cart {
     & i {

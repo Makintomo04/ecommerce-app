@@ -11,8 +11,12 @@ const WomensPage = ({ match }) => {
   return (
     <div className="womens-page">
       <Switch>
-        <Route path={`${match.path}`} component={WomensComponent} />
-        <Route path={`/${match.path}/clothing`} component={WomensClothing} />
+        <Route exact path={`${match.path}`} component={WomensComponent} />
+        <Route
+          exact
+          path={`/${match.path}/clothing`}
+          component={WomensClothing}
+        />
         <Route path={`/${match.path}/shoes`} component={WomensShoes} />
         <Route
           path={`/${match.path}/accessories`}

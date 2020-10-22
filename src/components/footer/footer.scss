@@ -23,11 +23,22 @@ footer {
     }
   }
   .footer {
+    @media (max-width: 410px) {
+      text-align: center;
+      justify-content: center;
+    }
+    margin: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     // height: 400px;
     width: 100%;
     margin-bottom: 30px;
+    ul {
+      @media (max-width: 840px) {
+        margin: 40px;
+      }
+    }
   }
   .socials {
     // border-top: 1px solid rgba(119, 119, 119, 0.5);

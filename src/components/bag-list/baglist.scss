@@ -1,7 +1,14 @@
 .bag {
   display: flex;
-
+  @media (max-width: 840px) {
+    flex-direction: column;
+    width: 100%;
+    // padding: 30px;
+  }
   .bag-list {
+    @media (max-width: 840px) {
+      padding: 30px;
+    }
     display: flex;
     flex: 2;
     flex-direction: column;

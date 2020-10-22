@@ -17,6 +17,9 @@ const Header = ({ currentUser, hidden, setCartHidden, cartItems, history }) => {
       {/* {console.log("yooo", currentUser)} */}
       {/*column flex*/}
       <header>
+        <div className="ham">
+          <i class="fas fa-bars"></i>
+        </div>
         <div className="lang">
           <div
             style={{ display: "flex", alignItems: "center", height: "100%" }}
