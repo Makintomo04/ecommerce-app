@@ -5,6 +5,7 @@ import HomePage from "./pages/homepage/HomePage";
 import MensPage from "./pages/menspage/MensPage";
 import WomensPage from "./pages/womenspage/WomensPage";
 import ClothingPage from "./pages/clothingpage/Clothing";
+import WomensClothing from "./pages/womenspage/womensclothing/WomensClothing";
 import ShoesPage from "./pages/shoespage/Shoes";
 import AccessoriesPage from "./pages/accessoriespage/Accessories";
 import ActivewearPage from "./pages/activewearpage/Activewear";
@@ -20,6 +21,7 @@ import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
+import WomensShoes from "./pages/womenspage/womensshoes/WomensShoes";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -62,6 +64,8 @@ class App extends React.Component {
             />
             <Route exact path="/mens" component={MensPage} />
             <Route exact path="/womens" component={WomensPage} />
+            <Route path="/womens/clothing" component={WomensClothing} />
+            <Route path="/womens/shoes" component={WomensShoes} />
             <Route path="/clothing" component={ClothingPage} />
             <Route path="/shoes" component={ShoesPage} />
             <Route path="/accessories" component={AccessoriesPage} />

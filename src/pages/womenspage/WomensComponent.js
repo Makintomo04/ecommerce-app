@@ -9,7 +9,8 @@ import clothing from "../../components/gender-category/images/womens/clothing.jp
 import shoes from "../../components/gender-category/images/womens/shoes.jpg";
 import Accessories from "../../components/gender-category/images/womens/accessories.jpg";
 import Activewear from "../../components/gender-category/images/womens/activewear.jpg";
-const WomensComponent = () => {
+import { withRouter } from "react-router-dom";
+const WomensComponent = ({ history }) => {
   const [womensCollection] = useState({
     collections: WomensData,
   });
@@ -27,15 +28,24 @@ const WomensComponent = () => {
       {collections.map(({ id, ...remainingProps }) => (
         <Collection_Row key={id} {...remainingProps} isPreview />
       ))}
-      <span className="mens-page__newIn-link">
+      <span className="womens-page__newIn-link">
         <Link to="womens/new-in">SHOP NOW</Link>
       </span>
       <div className="categories-grid">
         {/* <GenderCategory title="New In" /> */}
-        <GenderCategory title="Clothing" image={clothing} />
-        <GenderCategory title="Shoes" image={shoes} />
-        <GenderCategory title="Accessories" image={Accessories} />
-        <GenderCategory title="Activewear" image={Activewear} />
+        <GenderCategory
+          gender="womens"
+          history={history}
+          title="clothing"
+          image={clothing}
+        />
+        <GenderCategory gender="womens" title="shoes" image={shoes} />
+        <GenderCategory
+          gender="womens"
+          title="accessories"
+          image={Accessories}
+        />
+        <GenderCategory gender="womens" title="activewear" image={Activewear} />
         {/* <GenderCategory title="" /> */}
       </div>
     </div>
