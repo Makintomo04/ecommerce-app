@@ -33,6 +33,11 @@ const Collection_Item = ({
       removeFavItem(item);
     }
   };
+  const moveToBag = (item) => {
+    setIsFav(false);
+    addItem(item);
+    removeFavItem(item);
+  };
   return (
     <div className="collection_item">
       {!wishlist ? (
@@ -57,8 +62,16 @@ const Collection_Item = ({
           <span className="collection_item__details__name">{name}</span>
           <span className="collection_item__details__price">£{price}.00</span>
         </div>
-        <img src={AddToBag} onClick={() => addItem(item)} />
+        {!wishlist && <img src={AddToBag} onClick={() => moveToBag(item)} />}
       </div>
+      {wishlist && (
+        <span
+          className="collection_item__move-to-bag"
+          onClick={() => moveToBag(item)}
+        >
+          Move To Bag
+        </span>
+      )}
     </div>
   );
 };
