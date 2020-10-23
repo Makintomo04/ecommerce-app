@@ -24,6 +24,10 @@ import { selectCurrentUser } from "./redux/user/user.selectors";
 import WomensShoes from "./pages/womenspage/womensshoes/WomensShoes";
 import WomensAccessories from "./pages/womenspage/womensaccessories/WomensAccessories";
 import WomensActivewear from "./pages/womenspage/womensactivewear/WomensActivewear";
+import { MensClothing } from "./pages/menspage/mensclothing/MensClothing";
+import MensShoes from "./pages/menspage/mensshoes/MensShoes";
+import MensAccessories from "./pages/menspage/mensaccessories/MensAccessories";
+import MensActivewear from "./pages/menspage/mensactivewear/MensActivewear";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -65,6 +69,10 @@ class App extends React.Component {
               }
             />
             <Route exact path="/mens" component={MensPage} />
+            <Route path="/mens/clothing" component={MensClothing} />
+            <Route path="/mens/shoes" component={MensShoes} />
+            <Route path="/mens/accessories" component={MensAccessories} />
+            <Route path="/mens/activewear" component={MensActivewear} />
             <Route exact path="/womens" component={WomensPage} />
             <Route path="/womens/clothing" component={WomensClothing} />
             <Route path="/womens/shoes" component={WomensShoes} />

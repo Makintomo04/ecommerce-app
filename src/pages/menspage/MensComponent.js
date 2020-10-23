@@ -9,7 +9,7 @@ import clothing from "../../components/gender-category/images/mens/clothing.jpg"
 import shoes from "../../components/gender-category/images/mens/shoes.jpg";
 import Accessories from "../../components/gender-category/images/mens/accessories.jpg";
 import Activewear from "../../components/gender-category/images/mens/activewear.jpg";
-const MensComponent = () => {
+const MensComponent = ({ history }) => {
   const [mensCollection, setMensCollection] = useState({
     collections: MensData,
   });
@@ -32,10 +32,15 @@ const MensComponent = () => {
       </span>
       <div className="categories-grid">
         {/* <GenderCategory title="New In" /> */}
-        <GenderCategory title="Clothing" image={clothing} />
-        <GenderCategory title="Shoes" image={shoes} />
-        <GenderCategory title="Accessories" image={Accessories} />
-        <GenderCategory title="Activewear" image={Activewear} />
+        <GenderCategory
+          gender="mens"
+          history={history}
+          title="clothing"
+          image={clothing}
+        />
+        <GenderCategory gender="mens" title="shoes" image={shoes} />
+        <GenderCategory gender="mens" title="accessories" image={Accessories} />
+        <GenderCategory gender="mens" title="activewear" image={Activewear} />
         {/* <GenderCategory title="" /> */}
       </div>
     </div>
