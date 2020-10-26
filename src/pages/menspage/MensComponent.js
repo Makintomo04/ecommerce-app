@@ -9,6 +9,7 @@ import clothing from "../../components/gender-category/images/mens/clothing.jpg"
 import shoes from "../../components/gender-category/images/mens/shoes.jpg";
 import Accessories from "../../components/gender-category/images/mens/accessories.jpg";
 import Activewear from "../../components/gender-category/images/mens/activewear.jpg";
+import Blog from "../../components/blog/Blog";
 const MensComponent = ({ history }) => {
   const [mensCollection, setMensCollection] = useState({
     collections: MensData,
@@ -43,6 +44,7 @@ const MensComponent = ({ history }) => {
         <GenderCategory gender="mens" title="activewear" image={Activewear} />
         {/* <GenderCategory title="" /> */}
       </div>
+      <Blog blogGender="mens" />
     </div>
   );
 };

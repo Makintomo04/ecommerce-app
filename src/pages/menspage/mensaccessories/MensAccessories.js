@@ -8,8 +8,8 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import Collection_Row from "../../../components/collection-row/Collection_Row";
 const MensAccessories = ({ accessories, mensAccessories }) => {
-  let accessoriesArray = accessories;
-  accessoriesArray[0].items = mensAccessories;
+  let accessoriesArray = [...accessories];
+  accessoriesArray[0].items = [...mensAccessories];
   //   console.log("OOOOO", accessories);
   //   console.log("OOOOO", mensAccessories);
   //   console.log("HELLLOOOOOOOOOOOOOOOO");

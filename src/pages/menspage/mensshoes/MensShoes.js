@@ -8,15 +8,15 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import Collection_Row from "../../../components/collection-row/Collection_Row";
 const MensShoes = ({ shoes, mensShoes }) => {
-  let shoesArray = shoes;
-  shoesArray[0].items = mensShoes;
+  let shoesArray = shoes.slice();
+  shoesArray[0].items = mensShoes.slice();
   //   console.log("OOOOO", shoes);
   //   console.log("OOOOO", mensShoes);
   //   console.log("HELLLOOOOOOOOOOOOOOOO");
   return (
     <div className="mens-category-page">
       <div className="container">
-        <h1 className="mens-category-page__title">Women's Shoes</h1>
+        <h1 className="mens-category-page__title">Men's Shoes</h1>
         <p className="mens-category-page__para">
           Stand out from the crowd – browse through fantastic range of accessory
           items to complement your outfit.

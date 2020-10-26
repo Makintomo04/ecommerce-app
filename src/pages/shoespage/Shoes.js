@@ -21,18 +21,33 @@ const Shoes = ({
   womensShoes,
 }) => {
   const [shoeFilter, setShoeFilter] = useState("all");
-  let tempfilter = shoes;
-  console.log(tempfilter);
+  let tempfilter = [...shoes];
   const handleClick = (filter) => {
-    tempfilter[0].items = allShoes;
+    // tempfilter[0].items = [...allShoes];
+
     setShoeFilter("all");
-    if (filter === "mens") {
-      tempfilter[0].items = mensShoes;
-      setShoeFilter("mens");
-    } else if (filter === "womens") {
-      tempfilter[0].items = womensShoes;
-      setShoeFilter("womens");
+    switch (filter) {
+      case "mens":
+        tempfilter[0].items = [...mensShoes];
+        console.log("pppp", shoes);
+        break;
+      case "womens":
+        tempfilter[0].items = [...womensShoes];
+        console.log("tttt", shoes);
+        break;
+      default:
+        tempfilter[0].items = [...allShoes];
+        console.log("aaaa", shoes);
     }
+    console.log(tempfilter);
+    // if (filter === "mens") {
+    //   tempfilter[0].items = [...mensShoes];
+    //   setShoeFilter("mens");
+    // } else if (filter === "womens") {
+    //   tempfilter[0].items = [...womensShoes];
+    //   console.log("tttt", womensShoes);
+    //   setShoeFilter("womens");
+    // }
   };
   return (
     <div className="shoes-page">

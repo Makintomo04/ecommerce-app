@@ -8,14 +8,14 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import Collection_Row from "../../../components/collection-row/Collection_Row";
 export const MensClothing = ({ clothing, mensClothing, match }) => {
-  let clothingArray = clothing;
-  clothingArray[0].items = mensClothing;
-  console.log("OOOOO", match);
-  console.log("HELLLOOOOOOOOOOOOOOOO");
+  let clothingArray = [...clothing];
+  clothingArray[0].items = [...mensClothing];
+  // console.log("OOOOO", match);
+  // console.log("HELLLOOOOOOOOOOOOOOOO");
   return (
     <div className="mens-category-page">
       <div className="container">
-        <h1 className="mens-category-page__title">Men's Clothing</h1>
+        <h1 className="mens-category-page__title">Women's Clothing</h1>
         <p className="mens-category-page__para">
           Stand out from the crowd – browse through fantastic range of accessory
           items to complement your outfit.

@@ -69,12 +69,12 @@ class App extends React.Component {
               }
             />
             <Route exact path="/mens" component={MensPage} />
-            <Route path="/mens/clothing" component={MensClothing} />
             <Route path="/mens/shoes" component={MensShoes} />
             <Route path="/mens/accessories" component={MensAccessories} />
             <Route path="/mens/activewear" component={MensActivewear} />
             <Route exact path="/womens" component={WomensPage} />
             <Route path="/womens/clothing" component={WomensClothing} />
+            <Route path="/mens/clothing" component={MensClothing} />
             <Route path="/womens/shoes" component={WomensShoes} />
             <Route path="/womens/accessories" component={WomensAccessories} />
             <Route path="/womens/activewear" component={WomensActivewear} />

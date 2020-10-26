@@ -20,16 +20,16 @@ const Activewear = ({
   womensActivewear,
 }) => {
   const [activewearFilter, setActivewearFilter] = useState("all");
-  let tempfilter = activewear;
+  let tempfilter = [...activewear];
   console.log(tempfilter);
   const handleClick = (filter) => {
-    tempfilter[0].items = allActivewear;
+    tempfilter[0].items = [...allActivewear];
     setActivewearFilter("all");
     if (filter === "mens") {
-      tempfilter[0].items = mensActivewear;
+      tempfilter[0].items = [...mensActivewear];
       setActivewearFilter("mens");
     } else if (filter === "womens") {
-      tempfilter[0].items = womensActivewear;
+      tempfilter[0].items = [...womensActivewear];
       setActivewearFilter("womens");
     }
   };

@@ -49,7 +49,7 @@ const WomensComponent = ({ history }) => {
         <GenderCategory gender="womens" title="activewear" image={Activewear} />
         {/* <GenderCategory title="" /> */}
       </div>
-      <Blog />
+      <Blog blogGender="womens" />
     </div>
   );
 };

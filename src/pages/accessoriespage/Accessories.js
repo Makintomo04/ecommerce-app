@@ -20,16 +20,16 @@ const Accessories = ({
   womensAccessories,
 }) => {
   const [accessoriesFilter, setAccessoriesFilter] = useState("all");
-  let tempfilter = accessories;
+  let tempfilter = [...accessories];
   console.log(tempfilter);
   const handleClick = (filter) => {
-    tempfilter[0].items = allAccessories;
+    tempfilter[0].items = [...allAccessories];
     setAccessoriesFilter("all");
     if (filter === "mens") {
-      tempfilter[0].items = mensAccessories;
+      tempfilter[0].items = [...mensAccessories];
       setAccessoriesFilter("mens");
     } else if (filter === "womens") {
-      tempfilter[0].items = womensAccessories;
+      tempfilter[0].items = [...womensAccessories];
       setAccessoriesFilter("womens");
     }
   };

@@ -20,16 +20,16 @@ const Clothing = ({
   womensClothing,
 }) => {
   const [clothingFilter, setClothingFilter] = useState("all");
-  let tempfilter = clothing;
+  let tempfilter = [...clothing];
   console.log(tempfilter);
   const handleClick = (filter) => {
-    tempfilter[0].items = allClothing;
+    tempfilter[0].items = [...allClothing];
     setClothingFilter("all");
     if (filter === "mens") {
-      tempfilter[0].items = mensClothing;
+      tempfilter[0].items = [...mensClothing];
       setClothingFilter("mens");
     } else if (filter === "womens") {
-      tempfilter[0].items = womensClothing;
+      tempfilter[0].items = [...womensClothing];
       setClothingFilter("womens");
     }
   };

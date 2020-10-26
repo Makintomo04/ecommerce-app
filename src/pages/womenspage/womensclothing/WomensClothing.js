@@ -8,10 +8,10 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import Collection_Row from "../../../components/collection-row/Collection_Row";
 export const WomensClothing = ({ clothing, womensClothing, match }) => {
-  let clothingArray = clothing;
-  clothingArray[0].items = womensClothing;
-  console.log("OOOOO", match);
-  console.log("HELLLOOOOOOOOOOOOOOOO");
+  let clothingArray = [...clothing];
+  clothingArray[0].items = [...womensClothing];
+  // console.log("OOOOO", match);
+  // console.log("HELLLOOOOOOOOOOOOOOOO");
   return (
     <div className="womens-category-page">
       <div className="container">
