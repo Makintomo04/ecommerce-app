@@ -24,7 +24,7 @@ import { selectCurrentUser } from "./redux/user/user.selectors";
 import WomensShoes from "./pages/womenspage/womensshoes/WomensShoes";
 import WomensAccessories from "./pages/womenspage/womensaccessories/WomensAccessories";
 import WomensActivewear from "./pages/womenspage/womensactivewear/WomensActivewear";
-import { MensClothing } from "./pages/menspage/mensclothing/MensClothing";
+import MensClothing from "./pages/menspage/mensclothing/MensClothing";
 import MensShoes from "./pages/menspage/mensshoes/MensShoes";
 import MensAccessories from "./pages/menspage/mensaccessories/MensAccessories";
 import MensActivewear from "./pages/menspage/mensactivewear/MensActivewear";

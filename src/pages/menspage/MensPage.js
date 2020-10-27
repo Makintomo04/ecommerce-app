@@ -3,7 +3,7 @@ import MensComponent from "./MensComponent";
 import { Route, Switch } from "react-router-dom";
 import MensShoes from "./mensshoes/MensShoes";
 import MensActivewear from "./mensactivewear/MensActivewear";
-import { MensClothing } from "./mensclothing/MensClothing";
+import MensClothing from "./mensclothing/MensClothing";
 import MensAccessories from "./mensaccessories/MensAccessories";
 
 const MensPage = ({ match }) => {
