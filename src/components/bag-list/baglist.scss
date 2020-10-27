@@ -1,5 +1,8 @@
 .bag {
   display: flex;
+  justify-content: space-between;
+  // background-color: royalblue;
+  width: 100%;
   @media (max-width: 840px) {
     flex-direction: column;
     width: 100%;

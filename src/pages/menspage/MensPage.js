@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { TweenMax } from "gsap";
 import MensComponent from "./MensComponent";
 import { Route, Switch } from "react-router-dom";
 import MensShoes from "./mensshoes/MensShoes";
@@ -7,8 +8,12 @@ import MensClothing from "./mensclothing/MensClothing";
 import MensAccessories from "./mensaccessories/MensAccessories";
 
 const MensPage = ({ match }) => {
+  let mensPage = useRef(null);
+  useEffect(() => {
+    TweenMax.to(mensPage, 0, { css: { visibility: "visible" } });
+  });
   return (
-    <div className="mens-page">
+    <div ref={(el) => (mensPage = el)} className="mens-page">
       <Switch>
         <Route exact path={`${match.path}`} component={MensComponent} />
         <Route

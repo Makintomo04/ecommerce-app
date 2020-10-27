@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import WomensComponent from "./WomensComponent";
 import MensComponent from "../menspage/MensComponent";
 import WomensClothing from "./womensclothing/WomensClothing";
+import { TweenMax } from "gsap";
 import { Route, Switch } from "react-router-dom";
 import WomensShoes from "./womensshoes/WomensShoes";
 import WomensAccessories from "./womensaccessories/WomensAccessories";
 import WomensActivewear from "./womensactivewear/WomensActivewear";
 const WomensPage = ({ match }) => {
-  console.log(match);
+  let womensPage = useRef(null);
+  useEffect(() => {
+    TweenMax.to(womensPage, 0, { css: { visibility: "visible" } });
+  });
   return (
-    <div className="womens-page">
+    <div ref={(el) => (womensPage = el)} className="womens-page">
       <Switch>
         <Route exact path={`${match.path}`} component={WomensComponent} />
         <Route

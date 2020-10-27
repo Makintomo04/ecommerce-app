@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Collection_Row from "../../components/collection-row/Collection_Row";
+import { TweenMax, TimelineLite, Power3 } from "gsap";
 import { Link } from "react-router-dom";
 import WomensData from "./WomensData";
 import "./womenspage.scss";
@@ -16,6 +17,17 @@ const WomensComponent = ({ history }) => {
     collections: WomensData,
   });
   const { collections } = womensCollection;
+  let womensBannerImg = useRef(null);
+  let tl = new TimelineLite();
+
+  useEffect(() => {
+    tl.from(womensBannerImg, 1.2, { y: -1200, ease: Power3 }).from(
+      womensBannerImg,
+      1.6,
+      { scale: 2 },
+      0.2
+    );
+  });
   return (
     <div className="container">
       <h1 className="womens-page__title">Women's Fashion</h1>
@@ -24,7 +36,7 @@ const WomensComponent = ({ history }) => {
         from our experts? You'll find it all here.
       </p>
       <div className="womens-page__banner">
-        <img src={WomensBanner} alt="" />
+        <img ref={(el) => (womensBannerImg = el)} src={WomensBanner} alt="" />
       </div>
       {collections.map(({ id, ...remainingProps }) => (
         <Collection_Row key={id} {...remainingProps} isPreview />

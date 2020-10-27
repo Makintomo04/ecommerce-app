@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { TweenMax, TimelineLite, Power3 } from "gsap";
 import MensData from "./MensData";
 import "./menspage.scss";
 import Collection_Row from "../../components/collection-row/Collection_Row";
@@ -15,6 +16,17 @@ const MensComponent = ({ history }) => {
     collections: MensData,
   });
   const { collections } = mensCollection;
+  let mensBannerImg = useRef(null);
+  let tl = new TimelineLite();
+
+  useEffect(() => {
+    tl.from(mensBannerImg, 1.2, { y: -1200, ease: Power3 }).from(
+      mensBannerImg,
+      1.6,
+      { scale: 2 },
+      0.2
+    );
+  });
   return (
     <div className="container">
       <h1 className="mens-page__title">Mens's Fashion</h1>
@@ -23,7 +35,7 @@ const MensComponent = ({ history }) => {
         from our experts? You'll find it all here.
       </p>
       <div className="mens-page__banner">
-        <img src={MensBanner} alt="" />
+        <img ref={(el) => (mensBannerImg = el)} src={MensBanner} alt="" />
       </div>
       {collections.map(({ id, ...remainingProps }) => (
         <Collection_Row key={id} {...remainingProps} isPreview />
