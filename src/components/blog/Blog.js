@@ -11,19 +11,20 @@ const Blog = ({ blogGender }) => {
       </div>
       <div className="Blog__row">
         {!blogGender
-          ? BlogData.map(({ id, imageURL, title }) => (
-              <div key={id} className="Blog__card">
-                <div
-                  className="Blog__card__image"
-                  style={{ backgroundImage: `url(${imageURL})` }}
-                ></div>
-
-                <h3 className="Blog__card__title">{title}</h3>
-                <span>
-                  <Link to="/">READ MORE</Link>
-                </span>
-              </div>
-            ))
+          ? BlogData.filter(({ id, gender }) => !gender).map(
+              ({ id, imageURL, title }) => (
+                <div key={id} className="Blog__card">
+                  <div
+                    className="Blog__card__image"
+                    style={{ backgroundImage: `url(${imageURL})` }}
+                  ></div>
+                  <h3 className="Blog__card__title">{title}</h3>
+                  <span>
+                    <Link to="/">READ MORE</Link>
+                  </span>
+                </div>
+              )
+            )
           : BlogData.filter(({ id, gender }) => gender === blogGender).map(
               ({ id, imageURL, title }) => (
                 <div key={id} className="Blog__card">
@@ -31,7 +32,6 @@ const Blog = ({ blogGender }) => {
                     className="Blog__card__image"
                     style={{ backgroundImage: `url(${imageURL})` }}
                   ></div>
-
                   <h3 className="Blog__card__title">{title}</h3>
                   <span>
                     <Link to="/">READ MORE</Link>
