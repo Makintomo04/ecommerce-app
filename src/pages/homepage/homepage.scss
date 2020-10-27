@@ -14,36 +14,45 @@
   //   padding: 20px 80px;
   position: relative;
   z-index: 1;
-  .banner {
-    z-index: -2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .banner-wrapper {
     position: relative;
-    &__text {
-      position: absolute;
-      z-index: 0;
-      color: white;
-      text-align: center;
-      text-transform: uppercase;
-      text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.048);
-      // background: green;
-      &__heading {
-        font-size: 3rem;
-      }
-      &__subtext {
-        margin-bottom: 40px;
-      }
-    }
-    & img {
-      position: relative;
-      margin: 0px 0 60px;
-      object-fit: cover;
-      height: 575px;
-      width: 1920px;
-      // padding: 0 80px;
+    height: 575px;
+    width: 1920px;
+    margin: 0px 0 60px;
+    // background-color: red;
+    overflow: hidden;
+    // background-color: rgba(102, 51, 153, 0.36);
+    .banner {
       z-index: -2;
-      filter: saturate(0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      &__text {
+        position: absolute;
+        z-index: 0;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.048);
+        // background: green;
+        &__heading {
+          font-size: 3rem;
+        }
+        &__subtext {
+          margin-bottom: 40px;
+        }
+      }
+      & img {
+        position: relative;
+
+        object-fit: cover;
+        height: 575px;
+        width: 1920px;
+        // padding: 0 80px;
+        z-index: -2;
+        filter: saturate(0.6);
+      }
     }
   }
 }
