@@ -8,7 +8,7 @@ export const selectShoesCollection = createSelector(
 );
 export const selectAllShoeItems = createSelector(
   [selectShoesCollection],
-  (directory) => directory[0].items
+  (directory) => directory
 );
 
 export const selectMensShoes = createSelector(

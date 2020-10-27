@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ActivewearData from "./ActivewearData";
 import Collection_Row from "../../components/collection-row/Collection_Row";
 import { filterCatalogue } from "./catalogue.utils";
@@ -20,19 +20,22 @@ const Activewear = ({
   womensActivewear,
 }) => {
   const [activewearFilter, setActivewearFilter] = useState("all");
-  let tempfilter = [...activewear];
-  console.log(tempfilter);
+  let tempActivewear = JSON.parse(JSON.stringify(activewear));
+  const [localActivewear, setLocalActivewear] = useState([...activewear]);
+
   const handleClick = (filter) => {
-    tempfilter[0].items = [...allActivewear];
-    setActivewearFilter("all");
-    if (filter === "mens") {
-      tempfilter[0].items = [...mensActivewear];
-      setActivewearFilter("mens");
-    } else if (filter === "womens") {
-      tempfilter[0].items = [...womensActivewear];
-      setActivewearFilter("womens");
-    }
+    setActivewearFilter(filter);
   };
+  useEffect(() => {
+    if (activewearFilter === "mens") {
+      tempActivewear[0].items = [...mensActivewear];
+      setLocalActivewear([...tempActivewear]);
+    } else if (activewearFilter === "womens") {
+      tempActivewear[0].items = [...womensActivewear];
+      setLocalActivewear([...tempActivewear]);
+    } else setLocalActivewear([...activewear]);
+  }, [activewearFilter]);
+
   return (
     <div className="activewear-page">
       <div className="container">
@@ -46,7 +49,7 @@ const Activewear = ({
           <span onClick={() => handleClick("mens")}>Men's Activewear</span>
           <span onClick={() => handleClick("womens")}>Women's Activewear</span>
         </div>
-        {tempfilter.map(({ id, ...remainingProps }) => (
+        {localActivewear.map(({ id, ...remainingProps }) => (
           <Collection_Row key={id} {...remainingProps} noTitle />
         ))}
       </div>

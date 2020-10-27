@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ClothingData from "./ClothingData";
 import Collection_Row from "../../components/collection-row/Collection_Row";
 import { filterCatalogue } from "./catalogue.utils";
@@ -20,19 +20,22 @@ const Clothing = ({
   womensClothing,
 }) => {
   const [clothingFilter, setClothingFilter] = useState("all");
-  let tempfilter = [...clothing];
-  console.log(tempfilter);
+  let tempClothing = JSON.parse(JSON.stringify(clothing));
+  const [localClothing, setLocalClothing] = useState([...clothing]);
+
   const handleClick = (filter) => {
-    tempfilter[0].items = [...allClothing];
-    setClothingFilter("all");
-    if (filter === "mens") {
-      tempfilter[0].items = [...mensClothing];
-      setClothingFilter("mens");
-    } else if (filter === "womens") {
-      tempfilter[0].items = [...womensClothing];
-      setClothingFilter("womens");
-    }
+    setClothingFilter(filter);
   };
+  useEffect(() => {
+    if (clothingFilter === "mens") {
+      tempClothing[0].items = [...mensClothing];
+      setLocalClothing([...tempClothing]);
+    } else if (clothingFilter === "womens") {
+      tempClothing[0].items = [...womensClothing];
+      setLocalClothing([...tempClothing]);
+    } else setLocalClothing([...clothing]);
+  }, [clothingFilter]);
+
   return (
     <div className="clothing-page">
       <div className="container">
@@ -46,7 +49,7 @@ const Clothing = ({
           <span onClick={() => handleClick("mens")}>Men's Clothing</span>
           <span onClick={() => handleClick("womens")}>Women's Clothing</span>
         </div>
-        {tempfilter.map(({ id, ...remainingProps }) => (
+        {localClothing.map(({ id, ...remainingProps }) => (
           <Collection_Row key={id} {...remainingProps} noTitle />
         ))}
       </div>

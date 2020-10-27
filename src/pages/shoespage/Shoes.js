@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ShoesData from "./ShoesData";
 import Collection_Row from "../../components/collection-row/Collection_Row";
 import { filterCatalogue } from "./catalogue.utils";
@@ -20,35 +20,25 @@ const Shoes = ({
   mensShoes,
   womensShoes,
 }) => {
+  let tempShoes = JSON.parse(JSON.stringify(shoes));
   const [shoeFilter, setShoeFilter] = useState("all");
-  let tempfilter = [...shoes];
-  const handleClick = (filter) => {
-    // tempfilter[0].items = [...allShoes];
+  const [localShoes, setLocalShoes] = useState([...shoes]);
 
-    setShoeFilter("all");
-    switch (filter) {
-      case "mens":
-        tempfilter[0].items = [...mensShoes];
-        console.log("pppp", shoes);
-        break;
-      case "womens":
-        tempfilter[0].items = [...womensShoes];
-        console.log("tttt", shoes);
-        break;
-      default:
-        tempfilter[0].items = [...allShoes];
-        console.log("aaaa", shoes);
-    }
-    console.log(tempfilter);
-    // if (filter === "mens") {
-    //   tempfilter[0].items = [...mensShoes];
-    //   setShoeFilter("mens");
-    // } else if (filter === "womens") {
-    //   tempfilter[0].items = [...womensShoes];
-    //   console.log("tttt", womensShoes);
-    //   setShoeFilter("womens");
-    // }
+  const handleClick = (filter) => {
+    console.log(mensShoes);
+    console.log(localShoes);
+    setShoeFilter(filter);
   };
+  useEffect(() => {
+    if (shoeFilter === "mens") {
+      tempShoes[0].items = [...mensShoes];
+      setLocalShoes([...tempShoes]);
+    } else if (shoeFilter === "womens") {
+      tempShoes[0].items = [...womensShoes];
+      setLocalShoes([...tempShoes]);
+    } else setLocalShoes([...shoes]);
+  }, [shoeFilter]);
+
   return (
     <div className="shoes-page">
       <div className="container">
@@ -63,9 +53,11 @@ const Shoes = ({
           <span onClick={() => handleClick("mens")}>Men's Shoes</span>
           <span onClick={() => handleClick("womens")}>Women's Shoes</span>
         </div>
-        {tempfilter.map(({ id, ...remainingProps }) => (
-          <Collection_Row key={id} {...remainingProps} noTitle />
-        ))}
+
+        {localShoes.length > 0 &&
+          localShoes.map(({ id, ...remainingProps }) => (
+            <Collection_Row key={id} {...remainingProps} noTitle />
+          ))}
       </div>
     </div>
   );

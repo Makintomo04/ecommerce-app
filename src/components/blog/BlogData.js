@@ -62,7 +62,7 @@ const BlogData = [
   {
     id: 9,
     imageURL: `${grass} `,
-    title: "Plaids in",
+    title: "Plaids are in",
     gender: "mens",
   },
   {
