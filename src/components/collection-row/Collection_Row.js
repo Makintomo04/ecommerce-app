@@ -7,7 +7,7 @@ const Collection_Row = ({ title, items, isPreview, noTitle }) => {
       {noTitle ? null : (
         <h1 className="collection_row__title">{title.toUpperCase()}</h1>
       )}
-      <div className="preview_items">
+      <div className="collection_items">
         {isPreview
           ? items
               .filter(({ preview }) => preview === true)

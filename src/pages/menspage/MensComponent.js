@@ -11,6 +11,7 @@ import shoes from "../../components/gender-category/images/mens/shoes.jpg";
 import Accessories from "../../components/gender-category/images/mens/accessories.jpg";
 import Activewear from "../../components/gender-category/images/mens/activewear.jpg";
 import Blog from "../../components/blog/Blog";
+import PreviewRow from "../../components/preview-row/PreviewRow";
 const MensComponent = ({ history }) => {
   const [mensCollection, setMensCollection] = useState({
     collections: MensData,
@@ -38,7 +39,7 @@ const MensComponent = ({ history }) => {
         <img ref={(el) => (mensBannerImg = el)} src={MensBanner} alt="" />
       </div>
       {collections.map(({ id, ...remainingProps }) => (
-        <Collection_Row key={id} {...remainingProps} isPreview />
+        <PreviewRow key={id} {...remainingProps} isPreview />
       ))}
       <span className="mens-page__newIn-link">
         <Link to="/new-in">SHOP NOW</Link>
