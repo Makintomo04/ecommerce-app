@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Directory.scss";
 import Category from "../category/Category";
-
+import { TweenMax, TimelineLite, Power3 } from "gsap";
 const Directory = () => {
   const [categories, setCategories] = useState([
     {
@@ -41,11 +41,18 @@ const Directory = () => {
       link_URL: "clothing",
     },
   ]);
+  let categoryRef = useRef(null);
+  let tl = new TimelineLite();
+  useEffect(() => {
+    tl.from(categoryRef, 2, { y: 200, ease: Power3 });
+  });
   return (
     <div className="directory-menu">
-      {categories.map(({ id, ...remainingProps }) => (
-        <Category key={id} {...remainingProps} />
-      ))}
+      <div ref={(el) => (categoryRef = el)} className="directory-menu__item">
+        {categories.map(({ id, ...remainingProps }) => (
+          <Category key={id} {...remainingProps} />
+        ))}
+      </div>
     </div>
   );
 };

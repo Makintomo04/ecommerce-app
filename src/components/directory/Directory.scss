@@ -1,15 +1,19 @@
 .directory-menu {
-  width: 100%;
-  display: grid;
-
-  grid-template-areas:
-    "men women brands shoes"
-    "men  women accessories activewear ";
-
-  grid-template-rows: 260px 260px;
-  grid-template-columns: 300px 300px minmax(250px, auto) minmax(250px, auto);
-  grid-gap: 17px;
+  overflow: hidden;
+  max-height: 520px;
   margin-bottom: 80px;
+  &__item {
+    width: 100%;
+    display: grid;
+
+    grid-template-areas:
+      "men women brands shoes"
+      "men  women accessories activewear ";
+
+    grid-template-rows: 260px 260px;
+    grid-template-columns: 300px 300px minmax(250px, auto) minmax(250px, auto);
+    grid-gap: 17px;
+  }
 }
 
 @media (max-width: 1440px) {

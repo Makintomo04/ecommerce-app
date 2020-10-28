@@ -9,7 +9,9 @@
     width: 300px;
     padding: 10px;
     border-radius: 0;
+    outline: none;
     border: 1px solid black;
+    -webkit-appearance: none;
   }
   &__btn {
     cursor: pointer;
@@ -19,6 +21,7 @@
     background: black;
     color: white;
     border: none;
+    -webkit-appearance: none;
   }
   @media (max-width: 820px) {
     flex-direction: column;
