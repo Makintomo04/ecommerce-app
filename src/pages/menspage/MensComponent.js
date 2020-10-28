@@ -46,14 +46,25 @@ const MensComponent = ({ history }) => {
       <div className="categories-grid">
         {/* <GenderCategory title="New In" /> */}
         <GenderCategory
+          no="1"
           gender="mens"
           history={history}
           title="clothing"
           image={clothing}
         />
-        <GenderCategory gender="mens" title="shoes" image={shoes} />
-        <GenderCategory gender="mens" title="accessories" image={Accessories} />
-        <GenderCategory gender="mens" title="activewear" image={Activewear} />
+        <GenderCategory no="2" gender="mens" title="shoes" image={shoes} />
+        <GenderCategory
+          no="3"
+          gender="mens"
+          title="accessories"
+          image={Accessories}
+        />
+        <GenderCategory
+          no="4"
+          gender="mens"
+          title="activewear"
+          image={Activewear}
+        />
         {/* <GenderCategory title="" /> */}
       </div>
       <Blog blogGender="mens" />

@@ -1,4 +1,7 @@
 .payment-info {
+  @media (max-width: 1240px) {
+    width: 100%;
+  }
   background-color: #e4e4e4;
   // color: white;
   padding: 10px;

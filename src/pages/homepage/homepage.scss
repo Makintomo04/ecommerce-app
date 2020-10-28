@@ -15,10 +15,12 @@
   position: relative;
   z-index: 1;
   .banner-wrapper {
+    z-index: -3;
     position: relative;
     height: 575px;
     width: 1920px;
     margin: 0px 0 60px;
+
     // background-color: red;
     overflow: hidden;
     // background-color: rgba(102, 51, 153, 0.36);

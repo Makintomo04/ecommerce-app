@@ -1,6 +1,9 @@
 .sign-up {
   //   max-width: 1200px;
   //   margin: auto;
+  @media (max-width: 1080px) {
+    width: 100%;
+  }
   & h2 {
     margin-bottom: 20px;
   }

@@ -1,4 +1,7 @@
 .checkout-items {
+  @media (max-width: 1240px) {
+    width: 100%;
+  }
   width: 450px;
   &__top {
     display: flex;
@@ -6,6 +9,7 @@
     // padding: 0 30px;
     &__edit {
       cursor: pointer;
+      text-decoration: underline;
     }
   }
   & div {
