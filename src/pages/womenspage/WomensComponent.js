@@ -22,13 +22,13 @@ const WomensComponent = ({ history }) => {
   let tl = new TimelineLite();
 
   useEffect(() => {
-    tl.from(womensBannerImg, 1.2, { y: -1200, ease: Power3 }).from(
+    tl.from(womensBannerImg, 1.2, { y: -1200, ease: Power3.easeOut }).from(
       womensBannerImg,
       1.6,
       { scale: 2 },
       0.2
     );
-  });
+  }, []);
   return (
     <div className="container">
       <h1 className="womens-page__title">Women's Fashion</h1>

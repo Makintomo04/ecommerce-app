@@ -17,13 +17,13 @@ const HomePage = () => {
 
   useEffect(() => {
     TweenMax.to(home, 0, { css: { visibility: "visible" } });
-    tl.from(banner, 1.2, { y: 1200, ease: Power3.easeOut }).from(
+    tl.from(banner, 1.2, { y: 2200, ease: Power3.easeOut }).from(
       bannerImg,
       5,
       { scale: 1.5, ease: Power3.easeOut },
       0.2
     );
-  });
+  }, []);
   return (
     <div ref={(el) => (home = el)} className="home">
       {/* <div className="render">

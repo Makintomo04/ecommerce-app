@@ -11,7 +11,7 @@ const MensPage = ({ match }) => {
   let mensPage = useRef(null);
   useEffect(() => {
     TweenMax.to(mensPage, 0, { css: { visibility: "visible" } });
-  });
+  }, []);
   return (
     <div ref={(el) => (mensPage = el)} className="mens-page">
       <Switch>
