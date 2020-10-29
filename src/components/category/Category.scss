@@ -11,6 +11,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
+
     position: absolute;
     // z-index: -1;
     transition: all 0.2s ease;
@@ -41,6 +42,14 @@
       background-size: 175%;
       background-position: -180px -130px;
       background-image: url(./images/men3.jpg);
+      @media (max-width: 600px) {
+        background-size: 125%;
+        background-position: -100px -220px;
+      }
+      @media (max-width: 440px) {
+        background-size: 125%;
+        background-position: center;
+      }
     }
   }
 
@@ -48,6 +57,12 @@
     grid-area: women;
     & .category__bg {
       background-image: url(./images/women2.jpg);
+      @media (max-width: 1000px) {
+        background-position: top;
+      }
+      @media (max-width: 600px) {
+        background-position: 0 -80px;
+      }
     }
   }
   &:nth-of-type(3) {
@@ -56,6 +71,18 @@
       background-image: url(./images/creps.jpg);
       background-position: -220px 320px;
       background-size: 200%;
+      @media (max-width: 1000px) {
+        background-position: -240px 380px;
+      }
+      @media (max-width: 600px) {
+        background-position: -320px 420px;
+      }
+      @media (max-width: 440px) {
+        background-position: -220px 380px;
+      }
+      @media (max-width: 330px) {
+        background-position: -180px 280px;
+      }
     }
   }
   &:nth-of-type(4) {
@@ -64,6 +91,12 @@
     & .category__bg {
       background-image: url(./images/accessory.jpg);
       background-position: top;
+      @media (max-width: 600px) {
+        background-position: 0px -140px;
+      }
+      @media (max-width: 330px) {
+        background-position: 0px -18px;
+      }
     }
   }
   &:nth-of-type(5) {
