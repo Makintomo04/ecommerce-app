@@ -62,9 +62,8 @@
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   grid-gap: 40px;
-  margin: 80px 0;
-  @media (max-width: 820px) {
-    grid-template-columns: 80vw;
-    text-align: center;
+  margin: 120px 0;
+  @media (max-width: 600px) {
+    margin: 50px 0;
   }
 }
