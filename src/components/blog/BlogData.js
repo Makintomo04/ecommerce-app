@@ -28,7 +28,7 @@ const BlogData = [
   {
     id: 3,
     imageURL: `${window}`,
-    title: "14 Common Misconceptions About Fashion",
+    title: "Vintage",
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ const BlogData = [
   {
     id: 7,
     imageURL: `${sink}`,
-    title: "5 trends that'll leave you thirsting for more",
+    title: "Thirsty for fashion",
     gender: "womens",
   },
   {

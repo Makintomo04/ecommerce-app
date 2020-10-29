@@ -27,6 +27,10 @@
   justify-content: center;
   // align-items: center;
   //   border: 2px solid green;
+  @media (max-width: 620px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .Blog__card {
   //   display: flex;
@@ -44,6 +48,14 @@
   }
   &:last-child {
     padding-right: 0;
+  }
+  @media (max-width: 1240px) {
+    &:first-child {
+      padding-left: 10px;
+    }
+    &:last-child {
+      padding-right: 10px;
+    }
   }
   // background-color: rgb(222, 135, 189);
   // border: 2px solid green;

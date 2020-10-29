@@ -6,6 +6,7 @@ import PreviewItem from "./preview_item/PreviewItem";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
+import MediaQuery from "react-responsive";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 const PreviewRow = ({ title, items, isPreview, noTitle }) => {
   return (
@@ -13,35 +14,49 @@ const PreviewRow = ({ title, items, isPreview, noTitle }) => {
       {noTitle ? null : (
         <h1 className="preview_row__title">{title.toUpperCase()}</h1>
       )}
-
-      <Swiper
-        slidesPerView="auto"
-        // width={600}
-        pagination={{ clickable: true }}
-        // scrollbar={{ draggable: true }}
-        // width={20}
-        // setWrapperSize="true"
-        // tag="div"
-        loop
-        navigation
-        // width={200}
-        // autoHeight="true"
-        centeredSlides="true"
-        // spaceBetween={150}
-        loopFillGroupWithBlank="false"
-        speed={500}
-        // watchOverflow
-        // parallax="true"
-        // loopedSlides={5}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        {items.map((item) => (
-          <SwiperSlide>
-            <PreviewItem SwiperSlide={SwiperSlide} key={item.id} item={item} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <MediaQuery query="(max-device-width: 890px)">
+        <Swiper
+          slidesPerView="auto"
+          // width={600}
+          pagination={{ clickable: true }}
+          // scrollbar={{ draggable: true }}
+          // width={20}
+          // setWrapperSize="true"
+          // tag="div"
+          loop
+          navigation
+          // width={200}
+          // autoHeight="true"
+          centeredSlides="true"
+          // spaceBetween={150}
+          loopFillGroupWithBlank="false"
+          speed={500}
+          // watchOverflow
+          // parallax="true"
+          // loopedSlides={5}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          {items.map((item) => (
+            <SwiperSlide>
+              <PreviewItem
+                SwiperSlide={SwiperSlide}
+                key={item.id}
+                item={item}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </MediaQuery>
+      <MediaQuery query="(min-device-width: 890px)">
+        <div className="preview_items">
+          {isPreview
+            ? items
+                .filter(({ preview }) => preview === true)
+                .map((item) => <PreviewItem key={item.id} item={item} />)
+            : items.map((item) => <PreviewItem key={item.id} item={item} />)}
+        </div>
+      </MediaQuery>
     </div>
   );
 };

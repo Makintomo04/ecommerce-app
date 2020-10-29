@@ -12,6 +12,7 @@ import Accessories from "../../components/gender-category/images/womens/accessor
 import Activewear from "../../components/gender-category/images/womens/activewear.jpg";
 import { withRouter } from "react-router-dom";
 import Blog from "../../components/blog/Blog";
+import PreviewRow from "../../components/preview-row/PreviewRow";
 const WomensComponent = ({ history }) => {
   const [womensCollection] = useState({
     collections: WomensData,
@@ -39,7 +40,7 @@ const WomensComponent = ({ history }) => {
         <img ref={(el) => (womensBannerImg = el)} src={WomensBanner} alt="" />
       </div>
       {collections.map(({ id, ...remainingProps }) => (
-        <Collection_Row key={id} {...remainingProps} isPreview />
+        <PreviewRow key={id} {...remainingProps} isPreview />
       ))}
       <span className="womens-page__newIn-link">
         <Link to="womens/new-in">SHOP NOW</Link>

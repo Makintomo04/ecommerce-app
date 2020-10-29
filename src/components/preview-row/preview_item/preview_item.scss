@@ -39,6 +39,12 @@
     width: 100%;
     // min-height: 75%;
     height: 380px;
+    @media (max-width: 1240px) {
+      height: 310px;
+    }
+    @media (max-width: 890px) {
+      height: 380px;
+    }
     // border-radius: 5px;
     background-size: cover;
     background-position: center;
@@ -73,6 +79,9 @@
       padding: 2rem 0 0;
       // justify-self: flex-start;
       align-self: flex-start;
+      @media (max-width: 890px) {
+        text-align: left;
+      }
       span {
         // font-size: 1.4rem;
       }

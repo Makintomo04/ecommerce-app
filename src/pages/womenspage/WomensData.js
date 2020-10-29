@@ -45,21 +45,6 @@ const WomensData = [
         preview: true,
         newin: true,
       },
-      {
-        id: 15,
-        brand: "JKAttire",
-        name: "Jean Long Sleeve",
-        imageUrl: "https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png",
-        price: 40,
-        newin: true,
-      },
-      {
-        id: 16,
-        name: "Burgundy T-shirt",
-        imageUrl: "https://i.ibb.co/mh3VM1f/polka-dot-shirt.png",
-        price: 25,
-        newin: true,
-      },
     ],
   },
 ];
