@@ -24,6 +24,8 @@ import { selectCurrentUser } from "./redux/user/user.selectors";
 import WomensShoes from "./pages/womenspage/womensshoes/WomensShoes";
 import WomensAccessories from "./pages/womenspage/womensaccessories/WomensAccessories";
 import WomensActivewear from "./pages/womenspage/womensactivewear/WomensActivewear";
+import NewInMens from "./pages/menspage/newin/NewIn";
+import NewInWomens from "./pages/womenspage/newin/WomensNewIn";
 import MensClothing from "./pages/menspage/mensclothing/MensClothing";
 import MensShoes from "./pages/menspage/mensshoes/MensShoes";
 import MensAccessories from "./pages/menspage/mensaccessories/MensAccessories";
@@ -69,10 +71,12 @@ class App extends React.Component {
               }
             />
             <Route exact path="/mens" component={MensPage} />
+            <Route path="/mens/new-in" component={NewInMens} />
             <Route path="/mens/shoes" component={MensShoes} />
             <Route path="/mens/accessories" component={MensAccessories} />
             <Route path="/mens/activewear" component={MensActivewear} />
             <Route exact path="/womens" component={WomensPage} />
+            <Route path="/womens/new-in" component={NewInWomens} />
             <Route path="/womens/clothing" component={WomensClothing} />
             <Route path="/mens/clothing" component={MensClothing} />
             <Route path="/womens/shoes" component={WomensShoes} />

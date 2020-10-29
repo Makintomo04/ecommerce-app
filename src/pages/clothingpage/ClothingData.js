@@ -97,8 +97,6 @@ const ClothingData = [
         name: "High waist straight leg jeans in black",
         imageUrl: `${stradivariusjeans}`,
         price: 20,
-        // preview: true,
-        // newin: true,
         gender: "womens",
       },
       {

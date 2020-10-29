@@ -2,8 +2,14 @@ import lace from "../../components/collection-row/collection_item/images/women/j
 import blouse from "../../components/collection-row/collection_item/images/women/blouse.jpg";
 import tneck from "../../components/collection-row/collection_item/images/women/turtleneck.jpg";
 import hneck from "../../components/collection-row/collection_item/images/women/highneck.jpg";
-// import hummel from "../../components/collection-row/collection_item/images/hummel.jpg";
-// import fpBeanie from "../../components/collection-row/collection_item/images/fpHat.jpg";
+import sandals from "../../components/collection-row/collection_item/images/shoes/women/sandals.jpg";
+import wnikerunningshorts from "../../components/collection-row/collection_item/images/activewear/women/nikerunningshorts.jpg";
+import kneeboots from "../../components/collection-row/collection_item/images/shoes/women/londonrebelboots.jpg";
+import earringnecklace from "../../components/collection-row/collection_item/images/accessories/women/moonearring.jpg";
+import maxidress from "../../components/collection-row/collection_item/images/clothing/women/maxidress.jpg";
+import stradivariusjeans from "../../components/collection-row/collection_item/images/clothing/women/stradivariusjeans.jpg";
+import pbtrainer from "../../components/collection-row/collection_item/images/shoes/women/pbtrainer.jpg";
+import runningbra from "../../components/collection-row/collection_item/images/activewear/women/reebokrunbra.jpg";
 const WomensData = [
   {
     id: 1,
@@ -44,6 +50,70 @@ const WomensData = [
         price: 30,
         preview: true,
         newin: true,
+      },
+      {
+        id: 21,
+        brand: "AD",
+        name: "Framed strappy leather sandal in black",
+        imageUrl: `${sandals}`,
+        price: 7,
+        gender: "womens",
+      },
+      {
+        id: 52,
+        brand: "Nike",
+        name: "Running swoosh shorts in pink",
+        imageUrl: `${wnikerunningshorts}`,
+        price: 23,
+        gender: "womens",
+      },
+      {
+        id: 30,
+        brand: "London Rebel",
+        name: "Flat pull on knee boots in black",
+        imageUrl: `${kneeboots}`,
+        price: 25,
+        gender: "womens",
+      },
+      {
+        id: 37,
+        brand: "Pieces",
+        name: "18K plated moon and star stud earrings in gold",
+        imageUrl: `${earringnecklace}`,
+        price: 5,
+        gender: "womens",
+      },
+      {
+        id: 61,
+        brand: "True Violet",
+        name: "Black Label high neck keyhole plunge maxi dress",
+        imageUrl: `${maxidress}`,
+        price: 120,
+        gender: "womens",
+      },
+      {
+        id: 63,
+        brand: "Stradivarius",
+        name: "High waist straight leg jeans in black",
+        imageUrl: `${stradivariusjeans}`,
+        price: 20,
+        gender: "womens",
+      },
+      {
+        id: 31,
+        brand: "Pull&Bear",
+        name: "Flatform trainers in sand",
+        imageUrl: `${pbtrainer}`,
+        price: 15,
+        gender: "womens",
+      },
+      {
+        id: 49,
+        brand: "Reebok",
+        name: "Running bra in pink",
+        imageUrl: `${runningbra}`,
+        price: 28,
+        gender: "womens",
       },
     ],
   },

@@ -52,7 +52,7 @@ const PreviewRow = ({ title, items, isPreview, noTitle }) => {
         <div className="preview_items">
           {isPreview
             ? items
-                .filter(({ preview }) => preview === true)
+                .filter(({ preview }) => preview)
                 .map((item) => <PreviewItem key={item.id} item={item} />)
             : items.map((item) => <PreviewItem key={item.id} item={item} />)}
         </div>

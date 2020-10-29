@@ -42,7 +42,7 @@ const MensComponent = ({ history }) => {
         <PreviewRow key={id} {...remainingProps} isPreview />
       ))}
       <span className="mens-page__newIn-link">
-        <Link to="/new-in">SHOP NOW</Link>
+        <Link to="mens/new-in">SHOP NOW</Link>
       </span>
       <div className="categories-grid">
         {/* <GenderCategory title="New In" /> */}

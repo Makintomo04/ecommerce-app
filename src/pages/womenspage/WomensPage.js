@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import WomensComponent from "./WomensComponent";
-import MensComponent from "../menspage/MensComponent";
 import WomensClothing from "./womensclothing/WomensClothing";
 import { TweenMax } from "gsap";
 import { Route, Switch } from "react-router-dom";
+import WomensNewIn from "./newin/WomensNewIn";
 import WomensShoes from "./womensshoes/WomensShoes";
 import WomensAccessories from "./womensaccessories/WomensAccessories";
 import WomensActivewear from "./womensactivewear/WomensActivewear";
@@ -16,6 +16,7 @@ const WomensPage = ({ match }) => {
     <div ref={(el) => (womensPage = el)} className="womens-page">
       <Switch>
         <Route exact path={`${match.path}`} component={WomensComponent} />
+        <Route exact path={`/${match.path}/new-in`} component={WomensNewIn} />
         <Route
           exact
           path={`/${match.path}/clothing`}

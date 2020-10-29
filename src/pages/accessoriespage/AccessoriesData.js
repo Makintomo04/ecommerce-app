@@ -54,7 +54,6 @@ const AccessoriesData = [
         newin: true,
         gender: "womens",
       },
-
       {
         id: 36,
         brand: "Michael Kors",

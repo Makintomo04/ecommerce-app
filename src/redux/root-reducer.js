@@ -4,6 +4,8 @@ import storage from "redux-persist/lib/storage";
 import userReducer from "./user/user.reducer";
 import cartReducer from "./cart/cart.reducer";
 import wishlistReducer from "./wishlist/wishlist.reducer";
+import newinReducer from "./newin/newin.reducer";
+import womensnewinReducer from "./womens-newin/womensnewin.reducer";
 import shoesReducer from "./shoes/shoes.reducer";
 import accessoriesReducer from "./accessories/accessories.reducer";
 import activewearReducer from "./activewear/activewear.reducer";
@@ -19,6 +21,8 @@ const rootReducer = combineReducers({
   user: userReducer,
   cart: cartReducer,
   wishlist: wishlistReducer,
+  newin: newinReducer,
+  womensnewin: womensnewinReducer,
   shoes: shoesReducer,
   accessories: accessoriesReducer,
   activewear: activewearReducer,

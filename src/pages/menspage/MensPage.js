@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import MensShoes from "./mensshoes/MensShoes";
 import MensActivewear from "./mensactivewear/MensActivewear";
 import MensClothing from "./mensclothing/MensClothing";
+import NewIn from "./newin/NewIn";
 import MensAccessories from "./mensaccessories/MensAccessories";
 
 const MensPage = ({ match }) => {
@@ -16,6 +17,7 @@ const MensPage = ({ match }) => {
     <div ref={(el) => (mensPage = el)} className="mens-page">
       <Switch>
         <Route exact path={`${match.path}`} component={MensComponent} />
+        <Route exact path={`/${match.path}/new-in`} component={NewIn} />
         <Route
           exact
           path={`/${match.path}/clothing`}
