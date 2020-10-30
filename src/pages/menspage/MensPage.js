@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { lazy, Suspense, useEffect, useRef } from "react";
 import { TweenMax } from "gsap";
-import MensComponent from "./MensComponent";
 import { Route, Switch } from "react-router-dom";
-import MensShoes from "./mensshoes/MensShoes";
-import MensActivewear from "./mensactivewear/MensActivewear";
-import MensClothing from "./mensclothing/MensClothing";
-import NewIn from "./newin/NewIn";
-import MensAccessories from "./mensaccessories/MensAccessories";
+import Spinner from "../../components/spinner/Spinner";
+const MensComponent = lazy(() => import("./MensComponent"));
+const MensShoes = lazy(() => import("./mensshoes/MensShoes"));
+const MensActivewear = lazy(() => import("./mensactivewear/MensActivewear"));
+const MensClothing = lazy(() => import("./mensclothing/MensClothing"));
+const NewIn = lazy(() => import("./newin/NewIn"));
+const MensAccessories = lazy(() => import("./mensaccessories/MensAccessories"));
 
 const MensPage = ({ match }) => {
   let mensPage = useRef(null);
@@ -16,19 +17,24 @@ const MensPage = ({ match }) => {
   return (
     <div ref={(el) => (mensPage = el)} className="mens-page">
       <Switch>
-        <Route exact path={`${match.path}`} component={MensComponent} />
-        <Route exact path={`/${match.path}/new-in`} component={NewIn} />
-        <Route
-          exact
-          path={`/${match.path}/clothing`}
-          component={MensClothing}
-        />
-        <Route path={`/${match.path}/shoes`} component={MensShoes} />
-        <Route
-          path={`/${match.path}/accessories`}
-          component={MensAccessories}
-        />
-        <Route path={`/${match.path}/activewear`} component={MensActivewear} />
+        <Suspense fallback={<Spinner />}>
+          <Route exact path={`${match.path}`} component={MensComponent} />
+          <Route exact path={`/${match.path}/new-in`} component={NewIn} />
+          <Route
+            exact
+            path={`/${match.path}/clothing`}
+            component={MensClothing}
+          />
+          <Route path={`/${match.path}/shoes`} component={MensShoes} />
+          <Route
+            path={`/${match.path}/accessories`}
+            component={MensAccessories}
+          />
+          <Route
+            path={`/${match.path}/activewear`}
+            component={MensActivewear}
+          />
+        </Suspense>
       </Switch>
     </div>
   );

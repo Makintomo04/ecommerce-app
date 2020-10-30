@@ -29,13 +29,13 @@ const WomensComponent = ({ history }) => {
   let tl = new TimelineLite();
 
   const onEnterViewport = () => {
-    tl.to(dirBlind, 1.2, { y: -1000, ease: Power3.easeInOut }, 3)
+    tl.to(dirBlind, 1.2, { y: -1000, ease: Power3.easeInOut }, 1)
       .to(dirBlind, 0, { css: { display: "none" } })
-      .to(dirBlind2, 1.2, { y: -1000, ease: Power3.easeInOut }, 3.4)
+      .to(dirBlind2, 1.2, { y: -1000, ease: Power3.easeInOut }, 1.4)
       .to(dirBlind2, 0, { css: { display: "none" } })
-      .to(dirBlind3, 1.2, { y: -1000, ease: Power3.easeInOut }, 3.8)
+      .to(dirBlind3, 1.2, { y: -1000, ease: Power3.easeInOut }, 1.8)
       .to(dirBlind3, 0, { css: { display: "none" } })
-      .to(dirBlind4, 1.2, { y: -1000, ease: Power3.easeInOut }, 4.2)
+      .to(dirBlind4, 1.2, { y: -1000, ease: Power3.easeInOut }, 2.2)
       .to(dirBlind4, 0, { css: { display: "none" } });
   };
 
