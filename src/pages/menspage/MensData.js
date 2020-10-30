@@ -59,6 +59,7 @@ const MensData = [
         imageUrl: `${mkwatch}`,
         price: 159,
         gender: "mens",
+        preview: false,
       },
 
       {
@@ -68,6 +69,7 @@ const MensData = [
         imageUrl: `${checkeredshirt}`,
         price: 24,
         gender: "mens",
+        preview: false,
       },
       {
         id: 46,
@@ -76,6 +78,7 @@ const MensData = [
         imageUrl: `${nikeshorts}`,
         price: 26,
         gender: "mens",
+        preview: false,
       },
       {
         id: 33,
@@ -84,6 +87,7 @@ const MensData = [
         imageUrl: `${bershkachain}`,
         price: 8,
         gender: "mens",
+        preview: false,
       },
       {
         id: 22,
@@ -92,6 +96,7 @@ const MensData = [
         imageUrl: `${chelseaboots}`,
         price: 32,
         gender: "mens",
+        preview: false,
       },
       {
         id: 50,
@@ -100,6 +105,7 @@ const MensData = [
         imageUrl: `${niketracksuit}`,
         price: 60,
         gender: "mens",
+        preview: false,
       },
       {
         id: 32,
@@ -108,6 +114,7 @@ const MensData = [
         imageUrl: `${nb}`,
         price: 25,
         gender: "mens",
+        preview: false,
       },
       {
         id: 58,
@@ -116,6 +123,7 @@ const MensData = [
         imageUrl: `${cargotrousers}`,
         price: 85,
         gender: "mens",
+        preview: false,
       },
     ],
   },

@@ -37,24 +37,26 @@ const PreviewRow = ({ title, items, isPreview, noTitle }) => {
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          {items.map((item) => (
-            <SwiperSlide>
-              <PreviewItem
-                SwiperSlide={SwiperSlide}
-                key={item.id}
-                item={item}
-              />
-            </SwiperSlide>
-          ))}
+          {items
+            .filter((item) => item.preview === true)
+            .map((item) => (
+              <SwiperSlide>
+                <PreviewItem
+                  SwiperSlide={SwiperSlide}
+                  key={item.id}
+                  item={item}
+                />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </MediaQuery>
       <MediaQuery query="(min-device-width: 890px)">
         <div className="preview_items">
-          {isPreview
-            ? items
-                .filter(({ preview }) => preview)
-                .map((item) => <PreviewItem key={item.id} item={item} />)
-            : items.map((item) => <PreviewItem key={item.id} item={item} />)}
+          {items
+            .filter((item) => item.preview === true)
+            .map((item) => (
+              <PreviewItem key={item.id} item={item} />
+            ))}
         </div>
       </MediaQuery>
     </div>
