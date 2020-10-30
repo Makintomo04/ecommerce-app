@@ -56,10 +56,28 @@
 }
 .categories-grid {
   // background: black;
+  &__card {
+    position: relative;
+    overflow: hidden;
+    // background-color: salmon;
+    // position: relative;
+    // z-index: 300;
+    width: 100%;
+    height: 100%;
+    &__blind {
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      z-index: 111;
+      position: absolute;
+      top: 0;
+    }
+  }
   height: auto;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  z-index: 0;
   justify-content: center;
   grid-gap: 40px;
   margin: 120px 0;
