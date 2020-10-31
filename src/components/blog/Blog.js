@@ -2,6 +2,7 @@ import React from "react";
 import BlogData from "./BlogData";
 import "./Blog.scss";
 import { Link } from "react-router-dom";
+
 const Blog = ({ blogGender }) => {
   return (
     <div className="Blog">

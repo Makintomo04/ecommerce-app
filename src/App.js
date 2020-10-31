@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
+import ErrorBoundary from "./components/error-boundary/ErrorBoundary";
 const LoginPage = lazy(() => import("./pages/sign-in-sign-up/SignInSignUp"));
 const HomePage = lazy(() => import("./pages/homepage/HomePage"));
 const MensPage = lazy(() => import("./pages/menspage/MensPage"));
@@ -79,35 +80,40 @@ class App extends React.Component {
         <div className="App__Content">
           <Header />
           <Switch>
-            <Suspense fallback={<Spinner />}>
-              <Route exact path="/" component={HomePage} />
-              <Route
-                exact
-                path="/login"
-                render={() =>
-                  this.props.currentUser ? <Redirect to="/" /> : <LoginPage />
-                }
-              />
-              <Route exact path="/mens" component={MensPage} />
-              <Route path="/mens/new-in" component={NewInMens} />
-              <Route path="/mens/shoes" component={MensShoes} />
-              <Route path="/mens/accessories" component={MensAccessories} />
-              <Route path="/mens/activewear" component={MensActivewear} />
-              <Route exact path="/womens" component={WomensPage} />
-              <Route path="/womens/new-in" component={NewInWomens} />
-              <Route path="/womens/clothing" component={WomensClothing} />
-              <Route path="/mens/clothing" component={MensClothing} />
-              <Route path="/womens/shoes" component={WomensShoes} />
-              <Route path="/womens/accessories" component={WomensAccessories} />
-              <Route path="/womens/activewear" component={WomensActivewear} />
-              <Route path="/clothing" component={ClothingPage} />
-              <Route path="/shoes" component={ShoesPage} />
-              <Route path="/accessories" component={AccessoriesPage} />
-              <Route path="/activewear" component={ActivewearPage} />
-              <Route exact path="/checkout" component={CheckoutPage} />
-              <Route exact path="/bag" component={Bag} />
-              <Route exact path="/wishlist" component={WishListPage} />
-            </Suspense>
+            <ErrorBoundary>
+              <Suspense fallback={<Spinner />}>
+                <Route exact path="/" component={HomePage} />
+                <Route
+                  exact
+                  path="/login"
+                  render={() =>
+                    this.props.currentUser ? <Redirect to="/" /> : <LoginPage />
+                  }
+                />
+                <Route exact path="/mens" component={MensPage} />
+                <Route path="/mens/new-in" component={NewInMens} />
+                <Route path="/mens/shoes" component={MensShoes} />
+                <Route path="/mens/accessories" component={MensAccessories} />
+                <Route path="/mens/activewear" component={MensActivewear} />
+                <Route exact path="/womens" component={WomensPage} />
+                <Route path="/womens/new-in" component={NewInWomens} />
+                <Route path="/womens/clothing" component={WomensClothing} />
+                <Route path="/mens/clothing" component={MensClothing} />
+                <Route path="/womens/shoes" component={WomensShoes} />
+                <Route
+                  path="/womens/accessories"
+                  component={WomensAccessories}
+                />
+                <Route path="/womens/activewear" component={WomensActivewear} />
+                <Route path="/clothing" component={ClothingPage} />
+                <Route path="/shoes" component={ShoesPage} />
+                <Route path="/accessories" component={AccessoriesPage} />
+                <Route path="/activewear" component={ActivewearPage} />
+                <Route exact path="/checkout" component={CheckoutPage} />
+                <Route exact path="/bag" component={Bag} />
+                <Route exact path="/wishlist" component={WishListPage} />
+              </Suspense>
+            </ErrorBoundary>
           </Switch>
         </div>
         {/* <HomePage /> */}
