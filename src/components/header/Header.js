@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./header.scss";
+import { TweenMax, Power3 } from "gsap";
 import Button from "../button/Button";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
@@ -12,12 +13,18 @@ import { selectCartItems } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 
 const Header = ({ currentUser, hidden, setCartHidden, cartItems, history }) => {
+  let mobileNav = useRef(null);
+  const [toggleNav, setToggleNav] = useState(false);
+
+  const handleClick = () => {
+    setToggleNav(!toggleNav);
+  };
   return (
     <div className="header-bg">
       {/* {console.log("yooo", currentUser)} */}
       {/*column flex*/}
       <header>
-        <div className="ham">
+        <div className="ham" onClick={handleClick}>
           <i class="fas fa-bars"></i>
         </div>
         <div className="lang">
@@ -73,25 +80,40 @@ const Header = ({ currentUser, hidden, setCartHidden, cartItems, history }) => {
         {!hidden ? <CartDropdown /> : null}
       </header>
 
-      <nav>
-        <ul className="nav-links">
+      <nav
+        ref={(el) => (mobileNav = el)}
+        className={`${toggleNav === true ? "open-navbg" : "nav"}`}
+      >
+        <ul className={`${toggleNav === true ? "open-nav" : "nav-links"}`}>
           <li>
-            <Link to="/mens">Mens</Link>
+            <Link to="/mens" onClick={() => setToggleNav(false)}>
+              Mens
+            </Link>
           </li>
           <li>
-            <Link to="/womens">Womens</Link>
+            <Link to="/womens" onClick={() => setToggleNav(false)}>
+              Womens
+            </Link>
           </li>
           <li>
-            <Link to="/clothing">clothing</Link>
+            <Link to="/clothing" onClick={() => setToggleNav(false)}>
+              Clothing
+            </Link>
           </li>
           <li>
-            <Link to="/shoes">Shoes</Link>
+            <Link to="/shoes" onClick={() => setToggleNav(false)}>
+              Shoes
+            </Link>
           </li>
           <li>
-            <Link to="/accessories">Accessories</Link>
+            <Link to="/accessories" onClick={() => setToggleNav(false)}>
+              Accessories
+            </Link>
           </li>
           <li>
-            <Link to="/activewear">Activewear</Link>
+            <Link to="/activewear" onClick={() => setToggleNav(false)}>
+              Activewear
+            </Link>
           </li>
         </ul>
       </nav>
