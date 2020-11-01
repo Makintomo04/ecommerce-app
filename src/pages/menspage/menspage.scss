@@ -87,6 +87,10 @@
   justify-content: center;
   grid-gap: 40px;
   margin: 120px 0;
+  @media (max-width: 840px) {
+    grid-template-columns: 1fr;
+    width: 90vw;
+  }
   @media (max-width: 600px) {
     margin: 50px 0;
   }
