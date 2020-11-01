@@ -43,9 +43,9 @@ const Directory = () => {
   ]);
   let categoryRef = useRef(null);
   let tl = new TimelineLite();
-  useEffect(() => {
-    tl.from(categoryRef, 2, { y: 200, ease: Power3 });
-  }, []);
+  // useEffect(() => {
+  //   tl.from(categoryRef, 2, { y: 200, ease: Power3.easeOut });
+  // }, []);
   return (
     <div className="directory-menu">
       <div ref={(el) => (categoryRef = el)} className="directory-menu__item">
