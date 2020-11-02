@@ -3,7 +3,7 @@
   z-index: 1;
   // margin-top: 10px;
   width: 340px;
-  height: auto;
+  min-height: auto;
   padding-top: 20px;
   position: absolute;
   right: 0;
@@ -19,7 +19,9 @@
   right: 0;
 
   width: 100%;
-
+  @media (max-width: 540px) {
+    position: fixed;
+  }
   //   padding: 20px;
   &__count {
     background: #ebebeb;
@@ -61,5 +63,8 @@
     background: black;
     position: absolute;
     z-index: -10;
+    @media (max-width: 1240px) {
+      right: 25px;
+    }
   }
 }

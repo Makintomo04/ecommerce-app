@@ -9,6 +9,7 @@
   height: auto;
   //   min-width: 100%;
   margin: 0 auto;
+  margin-top: 140px;
   //   background: chocolate;
   align-items: center;
   //   padding: 20px 80px;
@@ -115,5 +116,15 @@
     // top: -50px;
     // left: 200px;
     height: 400px;
+  }
+}
+@media (max-width: 840px) {
+  .home {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 540px) {
+  .home {
+    margin-top: 60px;
   }
 }

@@ -1,8 +1,14 @@
 .wishlist {
   max-width: 1200px;
-  padding-top: 50px;
   padding-bottom: 80px;
   margin: auto;
+  margin-top: 200px;
+  @media (max-width: 840px) {
+    margin-top: 175px;
+  }
+  @media (max-width: 540px) {
+    margin-top: 150px;
+  }
   //   background-color: blueviolet;
   &__heading {
     display: flex;

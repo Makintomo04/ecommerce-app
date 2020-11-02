@@ -1,8 +1,9 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 200px;
   height: auto;
-  /* margin-top: 80px; */
+  // /* margin-top: 80px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +11,11 @@
 @media (max-width: 1240px) {
   .container {
     max-width: 780px;
+  }
+}
+@media (max-width: 540px) {
+  .container {
+    margin-top: 150px;
   }
 }
 .App {
