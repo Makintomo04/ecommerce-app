@@ -1,5 +1,5 @@
 ## Getting started
-You can view a live demo over at https://marq-e.herokuapp.com/
+You can view a live demo over at https://marq-e-site.web.app/
 
 To get the frontend running locally:
 
