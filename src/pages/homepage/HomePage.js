@@ -5,7 +5,7 @@ import "../../App.scss";
 import bannerImage from "../../components/category/images/bannerimg.jpg";
 import Directory from "../../components/directory/Directory";
 import render from "../../components/category/images/render.gif";
-import Email_List from "../../components/email_list/Email_List";
+import EmailList from "../../components/email_list/EmailList";
 import Blog from "../../components/blog/Blog";
 import Button from "../../components/button/Button";
 const HomePage = () => {
@@ -54,7 +54,7 @@ const HomePage = () => {
         </p>
       </div>
       <Blog />
-      <Email_List />
+      <EmailList />
     </div>
   );
 };

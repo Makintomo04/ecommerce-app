@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Blog component correctly 1`] = `
+<div
+  className="email-list"
+>
+  <span
+    className="email-list__text"
+  >
+    SIGN UP TO RECEIVE 15% OFF YOUR FIRST ORDER
+  </span>
+  <input
+    className="email-list__input"
+    id="email"
+    name="email"
+    placeholder="Enter email address"
+    type="text"
+  />
+  <input
+    className="email-list__btn"
+    type="submit"
+    value="SIGN UP"
+  />
+</div>
+`;
