@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="Blog"
+>
+  <div
+    className="Blog__heading"
+  >
+    <h2>
+      IN THE KNOW
+    </h2>
+    <p>
+      WWW.MARQE.COM
+    </p>
+  </div>
+  <div
+    className="Blog__row"
+  >
+    <div
+      className="Blog__card"
+      key="1"
+    >
+      <div
+        className="Blog__card__image"
+        style={
+          Object {
+            "backgroundImage": "url(apple.jpg )",
+          }
+        }
+      />
+      <h3
+        className="Blog__card__title"
+      >
+        The new formal
+      </h3>
+      <span>
+        <Link
+          to="/"
+        >
+          READ MORE
+        </Link>
+      </span>
+    </div>
+    <div
+      className="Blog__card"
+      key="2"
+    >
+      <div
+        className="Blog__card__image"
+        style={
+          Object {
+            "backgroundImage": "url(field.jpg)",
+          }
+        }
+      />
+      <h3
+        className="Blog__card__title"
+      >
+        The Helmut Depay Archive
+      </h3>
+      <span>
+        <Link
+          to="/"
+        >
+          READ MORE
+        </Link>
+      </span>
+    </div>
+    <div
+      className="Blog__card"
+      key="3"
+    >
+      <div
+        className="Blog__card__image"
+        style={
+          Object {
+            "backgroundImage": "url(window.jpg)",
+          }
+        }
+      />
+      <h3
+        className="Blog__card__title"
+      >
+        Vintage
+      </h3>
+      <span>
+        <Link
+          to="/"
+        >
+          READ MORE
+        </Link>
+      </span>
+    </div>
+    <div
+      className="Blog__card"
+      key="4"
+    >
+      <div
+        className="Blog__card__image"
+        style={
+          Object {
+            "backgroundImage": "url(veg.jpg)",
+          }
+        }
+      />
+      <h3
+        className="Blog__card__title"
+      >
+        Designer Spotlight: Simone Wells
+      </h3>
+      <span>
+        <Link
+          to="/"
+        >
+          READ MORE
+        </Link>
+      </span>
+    </div>
+  </div>
+</div>
+`;
