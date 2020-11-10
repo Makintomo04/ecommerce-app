@@ -11,7 +11,7 @@ const INITIAL_STATE = {
   promoCode: "",
 };
 
-const cartReducer = (state = INITIAL_STATE, action) => {
+export const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case cartActionTypes.SET_CART_HIDDEN:
       return {
