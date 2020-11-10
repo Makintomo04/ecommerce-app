@@ -49,7 +49,7 @@ const MensActivewear = lazy(() =>
   import("./pages/menspage/mensactivewear/MensActivewear")
 );
 
-class App extends React.Component {
+export class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
