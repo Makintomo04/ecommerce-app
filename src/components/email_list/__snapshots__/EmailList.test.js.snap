@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render Blog component correctly 1`] = `
+exports[`Should render EmailList component correctly 1`] = `
 <div
   className="email-list"
 >

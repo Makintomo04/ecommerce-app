@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Directory component correctly 1`] = `
+<div
+  className="directory-menu"
+>
+  <div
+    className="directory-menu__item"
+  >
+    <withRouter(Category)
+      img_URL="/Makintomo04/ecommerce-app/static/media/men3.a9dea04a.jpg"
+      key="1"
+      link_URL="mens"
+      title="Mens"
+    />
+    <withRouter(Category)
+      img_URL="/Makintomo04/ecommerce-app/static/media/women2.69141f75.jpg"
+      key="2"
+      link_URL="womens"
+      title="Womens"
+    />
+    <withRouter(Category)
+      img_URL="/Makintomo04/ecommerce-app/static/media/creps.2af0247c.jpg"
+      key="3"
+      link_URL="shoes"
+      title="Shoes"
+    />
+    <withRouter(Category)
+      img_URL="/Makintomo04/ecommerce-app/static/media/accessory.fac7c75c.jpg"
+      key="4"
+      link_URL="accessories"
+      title="Accessories"
+    />
+    <withRouter(Category)
+      img_URL="/Makintomo04/ecommerce-app/static/media/brand2.0a95648d.jpg"
+      key="5"
+      link_URL="activewear"
+      title="Activewear"
+    />
+    <withRouter(Category)
+      img_URL="/Makintomo04/ecommerce-app/static/media/nike.52712c27.jpg"
+      key="6"
+      link_URL="clothing"
+      title="Clothing"
+    />
+  </div>
+</div>
+`;
