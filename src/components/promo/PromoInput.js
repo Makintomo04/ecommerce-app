@@ -11,7 +11,6 @@ import { setPromo } from "../../redux/cart/cart.actions";
 
 const PromoInput = ({ promoCode, setPromo }) => {
   const [promoInput, setPromoInput] = useState("");
-
   const handleChange = (e) => {
     setPromoInput(e.target.value);
   };
@@ -19,7 +18,7 @@ const PromoInput = ({ promoCode, setPromo }) => {
     promoInput == "ABC123" && setPromo(promoInput);
   };
   {
-    console.log(promoCode);
+    // console.log(promoCode);
   }
   return (
     <div className="promoInput">
@@ -41,9 +40,11 @@ const PromoInput = ({ promoCode, setPromo }) => {
             padding: "30px 20px",
             background: "#f2f2f2",
             display: "flex",
+           
           }}
         >
-          <div className="accord" style={{ display: "flex" }}>
+          <div className="accord" style={{ display: "flex", flexDirection:"column",
+            width:"100%" }}>
             <FormInput
               label="Promo Code"
               // placeholder="example@domain.com"
