@@ -12,6 +12,7 @@ model User {
   createdAt DateTime @default(now())
   displayName String
   email String @unique
+  hashedPassword String
   firstName String
   lastName String
 }

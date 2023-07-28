@@ -7,6 +7,7 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import { withStyles } from "@material-ui/core/styles/withStyles";
+import * as api from "../../api";
 const styles = (theme) => ({
   accordion: {
     border: "none",
@@ -21,12 +22,22 @@ const SignIn = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { user } = await auth.signInWithEmailAndPassword(email, password);
+      const {data} = await api.signInUser({email, password})
+      console.log(data)
       setEmail("");
       setPassword("");
+
     } catch (error) {
-      console.log("error signing in, try again");
+      console.log("Oops",error)
     }
+    
+    // try {
+    //   const { user } = await auth.signInWithEmailAndPassword(email, password);
+      // setEmail("");
+      // setPassword("");
+    // } catch (error) {
+    //   console.log("error signing in, try again");
+    // }
   };
 
   const handlePassReset = (e) => {

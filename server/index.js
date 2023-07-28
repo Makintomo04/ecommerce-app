@@ -1,32 +1,25 @@
-import { PrismaClient } from '@prisma/client'
+import * as dotenv from "dotenv"
+dotenv.config();
 import express from "express";
 import bodyParser from 'body-parser';
 import cors from 'cors';
-const prisma = new PrismaClient()
+import prisma from "./db.js";
+import morgan from "morgan";
+import { createNewUser, signInUser } from "./handlers/user.js";
 
 const app = express();
+
+app.use(cors());
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
-app.use(cors());
+app.use(morgan("dev"));
 
 app.get("/user", async (req, res) => {
   const allUsers = await prisma.user.findMany({})
   res.status(200).json(allUsers)
 });
-app.post("/user", async (req, res) => {
-  const {displayName, email, firstName, lastName} = req.body
-  const user = await prisma.user.create({
-    data:{
-      displayName: displayName,
-      email: email,
-      firstName: firstName,
-      lastName: lastName,
-    }
-})
-
-res.status(201).json(user)
-
-});
+app.post("/user", createNewUser);
+app.post("/signin", signInUser);
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");
