@@ -8,6 +8,7 @@ import render from "../../components/category/images/render.gif";
 import EmailList from "../../components/email_list/EmailList";
 import Blog from "../../components/blog/Blog";
 import Button from "../../components/button/Button";
+import * as api from '../../api/index.js';
 const HomePage = () => {
   let home = useRef(null);
   let bannerwrapper = useRef(null);
@@ -15,9 +16,23 @@ const HomePage = () => {
   let bannerImg = useRef(null);
   let tl = new TimelineLite();
 
-  useEffect(() => {
+const fetchMyUsers = async () => {
+  try{
+    const { data } = await api.fetchUsers();
+    console.log("@@@@@@@@@@@@@@@@@@@",data)
+    return data
+  }catch(error){
+    console.log(error)
+  }
+
+}
+useEffect(() => {
+fetchMyUsers();
+
+})
+  useEffect( () => {
     TweenMax.to(home, 0, { css: { visibility: "visible" } });
-    tl.from(banner, 1.2, { y: 2200, ease: Power3.easeOut }).from(
+    tl.from(banner, 1.2, { y: 200, ease: Power3.easeOut }).from(
       bannerImg,
       5,
       { scale: 1.5, ease: Power3.easeOut },

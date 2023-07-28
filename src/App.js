@@ -11,6 +11,7 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import ErrorBoundary from "./components/error-boundary/ErrorBoundary";
+
 const LoginPage = lazy(() => import("./pages/sign-in-sign-up/SignInSignUp"));
 const HomePage = lazy(() => import("./pages/homepage/HomePage"));
 const MensPage = lazy(() => import("./pages/menspage/MensPage"));
@@ -48,11 +49,11 @@ const MensAccessories = lazy(() =>
 const MensActivewear = lazy(() =>
   import("./pages/menspage/mensactivewear/MensActivewear")
 );
-
 export class App extends React.Component {
   unsubscribeFromAuth = null;
 
-  componentDidMount() {
+  async componentDidMount() {
+
     const { setCurrentUser } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
